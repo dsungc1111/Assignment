@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" id="uvG-Ah-OqZ">
                         <barButtonItem key="rightBarButtonItem" image="play" id="YJX-a3-Jta">
                             <connections>
-                                <segue destination="8ZA-ez-Z1N" kind="show" id="FjW-c1-qXX"/>
+                                <segue destination="LaK-oG-QDg" kind="show" id="DAj-rM-D8r"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -157,10 +157,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xJl-Up-NMQ">
-                                <rect key="frame" x="20" y="203" width="353" height="366"/>
+                                <rect key="frame" x="20" y="203" width="353" height="415"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-59-4ZN">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="53.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="63"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -169,31 +169,31 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7M5-4v-MYN">
-                                        <rect key="frame" x="0.0" y="78.333333333333314" width="353" height="53"/>
+                                        <rect key="frame" x="0.0" y="88" width="353" height="63"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-0z-kX2">
-                                        <rect key="frame" x="0.0" y="156.33333333333331" width="353" height="53.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="176" width="353" height="63"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W84-EB-rFw">
-                                        <rect key="frame" x="0.0" y="234.66666666666669" width="353" height="53"/>
+                                        <rect key="frame" x="0.0" y="264" width="353" height="63"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SdJ-nj-Xiv">
-                                        <rect key="frame" x="0.0" y="312.66666666666663" width="353" height="53.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="352" width="353" height="63"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-35-hT5">
-                                <rect key="frame" x="320" y="528" width="45" height="31"/>
+                                <rect key="frame" x="320" y="577" width="45" height="31"/>
                                 <color key="onTintColor" red="0.91976243260000001" green="0.042802361929999998" blue="0.073467315950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </switch>
                         </subviews>
@@ -241,68 +241,13 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="KM3-eT-x94">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8ZA-ez-Z1N" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="zCB-LJ-dH9"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FE7-Ms-ocE">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="LaK-oG-QDg" kind="relationship" relationship="viewControllers" id="OuT-1Q-kkf"/>
-                        <segue destination="apk-u9-Afp" kind="relationship" relationship="viewControllers" id="4M0-bu-hHP"/>
-                        <segue destination="hxK-c9-YlI" kind="relationship" relationship="viewControllers" id="tKh-K3-r4d"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fvh-Ot-eqD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1901.5267175572519" y="3.5211267605633805"/>
-        </scene>
-        <!--emotoinDiary-->
-        <scene sceneID="ogF-t7-0v3">
-            <objects>
-                <viewController id="apk-u9-Afp" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uCe-1d-lld">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mgC-g3-jbB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="emotoinDiary" image="smiley.fill" catalog="system" id="rv1-WL-cGR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-XU-Hdj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1902" y="833"/>
-        </scene>
-        <!--newWord-->
-        <scene sceneID="BOG-Qe-aez">
-            <objects>
-                <viewController id="hxK-c9-YlI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tc5-M7-C4W">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="voX-o9-mew"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="newWord" image="book" catalog="system" id="XUl-y8-olt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="18O-U2-bpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2828" y="832"/>
-        </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="book" catalog="system" width="128" height="99"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="info" width="22" height="22"/>
         <image name="play" width="24" height="24"/>
-        <image name="smiley.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
