@@ -151,15 +151,73 @@
         <!--HOME-->
         <scene sceneID="y8e-b3-tng">
             <objects>
-                <viewController id="LaK-oG-QDg" sceneMemberID="viewController">
+                <viewController id="LaK-oG-QDg" customClass="HomeViewController" customModule="Assignment0520" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pff-BE-rYh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="xJl-Up-NMQ">
+                                <rect key="frame" x="20" y="203" width="353" height="366"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-59-4ZN">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="53.333333333333336"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="blankTheId:" destination="LaK-oG-QDg" eventType="touchUpInside" id="ufn-YN-idT"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7M5-4v-MYN">
+                                        <rect key="frame" x="0.0" y="78.333333333333314" width="353" height="53"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pN-0z-kX2">
+                                        <rect key="frame" x="0.0" y="156.33333333333331" width="353" height="53.333333333333343"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W84-EB-rFw">
+                                        <rect key="frame" x="0.0" y="234.66666666666669" width="353" height="53"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SdJ-nj-Xiv">
+                                        <rect key="frame" x="0.0" y="312.66666666666663" width="353" height="53.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZU-35-hT5">
+                                <rect key="frame" x="320" y="528" width="45" height="31"/>
+                                <color key="onTintColor" red="0.91976243260000001" green="0.042802361929999998" blue="0.073467315950000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </switch>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="q8F-rO-olw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q8F-rO-olw" firstAttribute="trailing" secondItem="xJl-Up-NMQ" secondAttribute="trailing" constant="20" id="HFX-eO-6R2"/>
+                            <constraint firstItem="XZU-35-hT5" firstAttribute="leading" secondItem="q8F-rO-olw" secondAttribute="leading" constant="320" id="Q1s-A5-vhi"/>
+                            <constraint firstItem="q8F-rO-olw" firstAttribute="trailing" secondItem="XZU-35-hT5" secondAttribute="trailing" constant="30" id="YRZ-0H-SIb"/>
+                            <constraint firstItem="xJl-Up-NMQ" firstAttribute="top" secondItem="q8F-rO-olw" secondAttribute="top" constant="100" id="ikU-Ro-0j6"/>
+                            <constraint firstItem="q8F-rO-olw" firstAttribute="bottom" secondItem="xJl-Up-NMQ" secondAttribute="bottom" constant="200" id="l6x-jp-BFS"/>
+                            <constraint firstItem="q8F-rO-olw" firstAttribute="bottom" secondItem="XZU-35-hT5" secondAttribute="bottom" constant="210" id="usd-EK-nnA"/>
+                            <constraint firstItem="xJl-Up-NMQ" firstAttribute="leading" secondItem="q8F-rO-olw" secondAttribute="leading" constant="20" id="vQk-wT-bFe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HOME" image="house" catalog="system" id="Ge8-4n-wWX"/>
                     <navigationItem key="navigationItem" id="KIu-RX-IdC"/>
+                    <connections>
+                        <outlet property="idTextField" destination="9rI-59-4ZN" id="FYO-Ip-Nbx"/>
+                        <outlet property="infoTextField" destination="SdJ-nj-Xiv" id="W0M-9R-fA7"/>
+                        <outlet property="nickNameTextField" destination="7M5-4v-MYN" id="F64-Ud-ztg"/>
+                        <outlet property="passwordTextField" destination="8pN-0z-kX2" id="CsY-LH-kNX"/>
+                        <outlet property="signInButton" destination="W84-EB-rFw" id="cQB-6H-Z1u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkB-75-DDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +253,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2td-yy-eml" kind="relationship" relationship="viewControllers" id="2Pi-5y-WjV"/>
                         <segue destination="LaK-oG-QDg" kind="relationship" relationship="viewControllers" id="OuT-1Q-kkf"/>
                         <segue destination="apk-u9-Afp" kind="relationship" relationship="viewControllers" id="4M0-bu-hHP"/>
                         <segue destination="hxK-c9-YlI" kind="relationship" relationship="viewControllers" id="tKh-K3-r4d"/>
@@ -204,22 +261,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvh-Ot-eqD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1901.5267175572519" y="3.5211267605633805"/>
-        </scene>
-        <!--NEW&HOT-->
-        <scene sceneID="TDh-FE-bU9">
-            <objects>
-                <viewController id="2td-yy-eml" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mkk-IU-KUw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mXU-3b-iF5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="NEW&amp;HOT" image="video.bubble.fill" catalog="system" id="tek-kn-Ncf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ina-95-cFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1889" y="784"/>
         </scene>
         <!--emotoinDiary-->
         <scene sceneID="ogF-t7-0v3">
@@ -235,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCo-XU-Hdj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864" y="793"/>
+            <point key="canvasLocation" x="1902" y="833"/>
         </scene>
         <!--newWord-->
         <scene sceneID="BOG-Qe-aez">
@@ -251,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18O-U2-bpj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3728" y="772"/>
+            <point key="canvasLocation" x="2828" y="832"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,7 +303,6 @@
         <image name="info" width="22" height="22"/>
         <image name="play" width="24" height="24"/>
         <image name="smiley.fill" catalog="system" width="128" height="123"/>
-        <image name="video.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
