@@ -10,14 +10,9 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet var idTextField: UITextField!
-    
     @IBOutlet var nickNameTextField: UITextField!
-    
     @IBOutlet var passwordTextField: UITextField!
-    
-    
     @IBOutlet var signInButton: UIButton!
-    
     @IBOutlet var infoTextField: UITextField!
     
     
@@ -25,7 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         
-        
+
         loginWindow(idTextField, loginWindowContent: "id 혹은 e-mail을(를) 입력하세요")
         loginWindow(nickNameTextField, loginWindowContent: "닉네임을 입력하세요.")
         loginWindow(passwordTextField, loginWindowContent: "비밀번호를 입력하세요.")
@@ -55,6 +50,13 @@ class HomeViewController: UIViewController {
 
     
     
+    @IBAction func keyboardButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     
     
     
@@ -62,9 +64,6 @@ class HomeViewController: UIViewController {
     
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
     
 
 }

@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet var backgroundImageView: UIImageView!
     
@@ -25,10 +24,15 @@ class ViewController: UIViewController {
     @IBOutlet var previewLabel: UILabel!
     
     @IBOutlet var previewFirstImageView: UIImageView!
-    
     @IBOutlet var previewSecondImageView: UIImageView!
-    
     @IBOutlet var previewThirdImageView: UIImageView!
+    @IBOutlet var topTenImageView1: UIImageView!
+
+    @IBOutlet var topTenImageView2: UIImageView!
+
+    @IBOutlet var topTenImageView3: UIImageView!
+    
+    
     
     let movies : [UIImage] = [.더퍼스트슬램덩크, .도둑들, .부산행, .스즈메의문단속, .아바타, .신과함께죄와벌, .신과함께인과연, .알라딘, .어벤져스엔드게임, .택시운전사]
     
@@ -89,6 +93,7 @@ class ViewController: UIViewController {
         previewLabel.text = "미리보기"
         previewLabel.textColor = .white
         
+        
         randomMovie(previewFirstImageView)
         randomMovie(previewSecondImageView)
         randomMovie(previewThirdImageView)
@@ -96,6 +101,7 @@ class ViewController: UIViewController {
     }
     
     func randomMovie(_ movie: UIImageView) {
+        movie.contentMode = .scaleAspectFit
         let number = Int.random(in: 0...previewContents.count-1)
         movie.image = previewContents[number]
         previewContents.remove(at: number)
@@ -105,6 +111,22 @@ class ViewController: UIViewController {
     @IBAction func playButtonTapped(_ sender: UIButton) {
         backgroundImage()
         previewMovie()
+        topTenMovie(badge: topTenImageView1)
+        topTenMovie(badge: topTenImageView2)
+        topTenMovie(badge: topTenImageView3)
+        }
+        
+    
+    
+    func topTenMovie(badge: UIImageView) {
+        let bool = Bool.random()
+        if bool == true {
+            badge.image = .top10Badge
+            badge.contentMode = .scaleAspectFit
+        } else {
+            badge.image = .none
+        }
+        
     }
     
     
