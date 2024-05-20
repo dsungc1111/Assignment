@@ -37,7 +37,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        previewContents = movies
         
         backgroundImage()
         topMenu()
@@ -86,6 +85,7 @@ class ViewController: UIViewController {
     }
     
     func previewMovie() {
+        previewContents = movies
         previewLabel.text = "미리보기"
         previewLabel.textColor = .white
         
@@ -103,7 +103,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
-        
+        backgroundImage()
+        previewMovie()
     }
     
     
