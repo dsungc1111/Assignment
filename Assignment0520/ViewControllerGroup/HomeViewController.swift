@@ -29,29 +29,34 @@ class HomeViewController: UIViewController {
     }
     
     func loginWindow(_ box: UITextField, loginWindowContent text: String) {
-        box.becomeFirstResponder()
         box.layer.borderWidth = 1
         box.backgroundColor = .gray
-        box.text = text
+        box.placeholder = text
         box.textColor = .white
         box.textAlignment = .center
         box.clearButtonMode = .always
+        
         if box == infoTextField {
             box.textAlignment = .left
             box.textColor = .white
             box.backgroundColor = .black
         }
+        passwordTextField.isSecureTextEntry = true
     }
     
     func signInButtonShape() {
         signInButton.layer.borderColor = UIColor.white.cgColor
         signInButton.layer.borderWidth = 1
     }
-
-    
-    
     @IBAction func keyboardButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
+        if sender.backgroundColor == UIColor.black{
+            sender.backgroundColor = .white
+            sender.setTitleColor(.black, for: .normal)
+        } else {
+            sender.backgroundColor = .black
+            sender.setTitleColor(.white, for: .normal)
+        }
     }
     
     @IBAction func keyboardDismiss(_ sender: UITapGestureRecognizer) {

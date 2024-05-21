@@ -195,8 +195,13 @@
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="blankTheId:" destination="LaK-oG-QDg" eventType="touchUpInside" id="ufn-YN-idT"/>
+                                            <outletCollection property="gestureRecognizers" destination="yZh-HT-9iK" appends="YES" id="GSu-Sq-3j2"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7M5-4v-MYN">
@@ -213,8 +218,8 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W84-EB-rFw">
                                         <rect key="frame" x="0.0" y="312" width="390" height="79"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                         <connections>
                                             <action selector="keyboardButtonTapped:" destination="LaK-oG-QDg" eventType="touchUpInside" id="7HO-di-gYA"/>
                                         </connections>
@@ -250,7 +255,7 @@
                     <tabBarItem key="tabBarItem" title="HOME" image="house" catalog="system" id="Ge8-4n-wWX"/>
                     <navigationItem key="navigationItem" id="KIu-RX-IdC"/>
                     <connections>
-                        <outlet property="idTextField" destination="9rI-59-4ZN" id="FYO-Ip-Nbx"/>
+                        <outlet property="idTextField" destination="9rI-59-4ZN" id="ASG-uf-pg6"/>
                         <outlet property="infoTextField" destination="SdJ-nj-Xiv" id="W0M-9R-fA7"/>
                         <outlet property="nickNameTextField" destination="7M5-4v-MYN" id="F64-Ud-ztg"/>
                         <outlet property="passwordTextField" destination="8pN-0z-kX2" id="CsY-LH-kNX"/>
@@ -263,6 +268,7 @@
                         <action selector="keyboardDismiss:" destination="LaK-oG-QDg" id="RY8-K6-5q0"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="yZh-HT-9iK"/>
             </objects>
             <point key="canvasLocation" x="2828.2442748091603" y="3.5211267605633805"/>
         </scene>
