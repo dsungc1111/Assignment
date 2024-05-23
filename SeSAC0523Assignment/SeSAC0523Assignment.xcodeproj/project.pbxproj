@@ -13,6 +13,7 @@
 		8BECD71A2BFF25B500B214E0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD7192BFF25B500B214E0 /* Base */; };
 		8BECD71C2BFF25B600B214E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD71B2BFF25B600B214E0 /* Assets.xcassets */; };
 		8BECD71F2BFF25B600B214E0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8BECD71E2BFF25B600B214E0 /* Base */; };
+		8BECD7272BFF377800B214E0 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD7262BFF377800B214E0 /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8BECD71B2BFF25B600B214E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BECD71E2BFF25B600B214E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BECD7202BFF25B600B214E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BECD7262BFF377800B214E0 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8BECD71B2BFF25B600B214E0 /* Assets.xcassets */,
 				8BECD71D2BFF25B600B214E0 /* LaunchScreen.storyboard */,
 				8BECD7202BFF25B600B214E0 /* Info.plist */,
+				8BECD7262BFF377800B214E0 /* SettingTableViewController.swift */,
 			);
 			path = SeSAC0523Assignment;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BECD7272BFF377800B214E0 /* SettingTableViewController.swift in Sources */,
 				8BECD7172BFF25B500B214E0 /* ViewController.swift in Sources */,
 				8BECD7132BFF25B500B214E0 /* AppDelegate.swift in Sources */,
 				8BECD7152BFF25B500B214E0 /* SceneDelegate.swift in Sources */,
