@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     func backgroundImage() {       
         let number = Int.random(in: 0...movies.count-1)
         backgroundImageView.image = movies[number]
-        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.contentMode = .scaleAspectFit
     }
     func topMenu() {
         topLogoLabel.text = "N"
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         label.text = wording
         label.textColor = .white
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 15, weight: .bold, width: .expanded)
+        label.font = .systemFont(ofSize: 13, weight: .bold, width: .expanded)
     }
     
     func middleInfo() {
