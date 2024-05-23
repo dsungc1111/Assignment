@@ -53,8 +53,6 @@ class SettingTableViewController: UITableViewController {
 
     
     
-    
-    //section 1의 셀 - 개수
-    
+        
 
 }

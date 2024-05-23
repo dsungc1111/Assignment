@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BBEF8A62BFF569800848AC6 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEF8A52BFF569800848AC6 /* ShoppingTableViewController.swift */; };
 		8BECD7132BFF25B500B214E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD7122BFF25B500B214E0 /* AppDelegate.swift */; };
 		8BECD7152BFF25B500B214E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD7142BFF25B500B214E0 /* SceneDelegate.swift */; };
 		8BECD7172BFF25B500B214E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD7162BFF25B500B214E0 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BBEF8A52BFF569800848AC6 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		8BECD70F2BFF25B500B214E0 /* SeSAC0523Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0523Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BECD7122BFF25B500B214E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BECD7142BFF25B500B214E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8BECD71D2BFF25B600B214E0 /* LaunchScreen.storyboard */,
 				8BECD7202BFF25B600B214E0 /* Info.plist */,
 				8BECD7262BFF377800B214E0 /* SettingTableViewController.swift */,
+				8BBEF8A52BFF569800848AC6 /* ShoppingTableViewController.swift */,
 			);
 			path = SeSAC0523Assignment;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BECD7272BFF377800B214E0 /* SettingTableViewController.swift in Sources */,
+				8BBEF8A62BFF569800848AC6 /* ShoppingTableViewController.swift in Sources */,
 				8BECD7172BFF25B500B214E0 /* ViewController.swift in Sources */,
 				8BECD7132BFF25B500B214E0 /* AppDelegate.swift in Sources */,
 				8BECD7152BFF25B500B214E0 /* SceneDelegate.swift in Sources */,
