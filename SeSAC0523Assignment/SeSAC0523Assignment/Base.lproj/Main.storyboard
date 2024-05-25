@@ -286,13 +286,61 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dsungc" id="AkM-oa-07S">
-                                <rect key="frame" x="20" y="183.33333206176758" width="353" height="44.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" id="AkM-oa-07S" customClass="ShoppingTableViewCell" customModule="SeSAC0523Assignment" customModuleProvider="target">
+                                <rect key="frame" x="20" y="183.33333206176758" width="353" height="150.33332824707031"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AkM-oa-07S" id="xkP-zN-sAt">
-                                    <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="44.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="150.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChZ-r4-nnD">
+                                            <rect key="frame" x="16" y="14.999999999999993" width="30" height="120.33333333333331"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="0bq-2Q-BnO"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="checkmark.square.fill" catalog="system"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJI-iO-Rwg">
+                                            <rect key="frame" x="307" y="4" width="30" height="142.33333333333334"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Jpy-Hz-7HJ"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="star"/>
+                                            <connections>
+                                                <action selector="bookmark:" destination="otb-rh-DCG" eventType="touchUpInside" id="OYu-ni-lck"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xej-bg-1nF">
+                                            <rect key="frame" x="66" y="14.999999999999993" width="221" height="120.33333333333331"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="TJI-iO-Rwg" secondAttribute="trailing" constant="16" id="3x4-wi-tWp"/>
+                                        <constraint firstItem="TJI-iO-Rwg" firstAttribute="width" secondItem="xkP-zN-sAt" secondAttribute="height" multiplier="1:5" id="Aqm-yB-Whs"/>
+                                        <constraint firstItem="ChZ-r4-nnD" firstAttribute="top" secondItem="xkP-zN-sAt" secondAttribute="topMargin" constant="4" id="W1Q-sJ-pua"/>
+                                        <constraint firstItem="ChZ-r4-nnD" firstAttribute="leading" secondItem="xkP-zN-sAt" secondAttribute="leading" constant="16" id="Y2L-Eo-yoi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ChZ-r4-nnD" secondAttribute="bottom" constant="4" id="gM3-0e-LIo"/>
+                                        <constraint firstItem="xej-bg-1nF" firstAttribute="centerY" secondItem="xkP-zN-sAt" secondAttribute="centerY" id="h7a-nu-MO3"/>
+                                        <constraint firstItem="TJI-iO-Rwg" firstAttribute="leading" secondItem="xej-bg-1nF" secondAttribute="trailing" constant="20" id="hMn-0N-VTE"/>
+                                        <constraint firstItem="TJI-iO-Rwg" firstAttribute="top" secondItem="xkP-zN-sAt" secondAttribute="top" constant="4" id="jSv-dc-06l"/>
+                                        <constraint firstItem="xej-bg-1nF" firstAttribute="leading" secondItem="ChZ-r4-nnD" secondAttribute="trailing" constant="20" id="keP-x0-byg"/>
+                                        <constraint firstItem="ChZ-r4-nnD" firstAttribute="centerY" secondItem="xkP-zN-sAt" secondAttribute="centerY" id="l6d-yL-79E"/>
+                                        <constraint firstAttribute="bottom" secondItem="TJI-iO-Rwg" secondAttribute="bottom" constant="4" id="lSN-S7-H5c"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xej-bg-1nF" secondAttribute="bottom" constant="4" id="mAG-9g-GSy"/>
+                                        <constraint firstItem="TJI-iO-Rwg" firstAttribute="centerY" secondItem="xkP-zN-sAt" secondAttribute="centerY" id="tHK-M9-mkD"/>
+                                        <constraint firstItem="xej-bg-1nF" firstAttribute="top" secondItem="xkP-zN-sAt" secondAttribute="topMargin" constant="4" id="xGL-CS-wDK"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookmarkButton" destination="TJI-iO-Rwg" id="ech-ZO-1Ff"/>
+                                    <outlet property="checkButton" destination="ChZ-r4-nnD" id="txa-7O-4Fh"/>
+                                    <outlet property="todoLabel" destination="xej-bg-1nF" id="jcQ-R2-0r1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -307,15 +355,19 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lv-bf-mcg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="otb-rh-DCG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2612.9770992366412" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="iphone.smartbatterycase.gen2" catalog="system" width="112" height="128"/>
         <image name="moon.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star" width="128" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
