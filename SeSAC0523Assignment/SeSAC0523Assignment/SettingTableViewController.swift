@@ -37,6 +37,8 @@ class SettingTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dsungC", for: indexPath)
         cell.textLabel?.text = settingMenu[indexPath.section][indexPath.row]
         cell.textLabel?.font = .systemFont(ofSize: 12)
+        //색깔 조금씩 더 연하게
+        //cell.backgroundColor?.withAlphaComponent(<#T##CGFloat#>)
         return cell
     }
     
@@ -51,7 +53,11 @@ class SettingTableViewController: UITableViewController {
         }
     }
 
-    
+    // 5. 셀 높이
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+        // viewDidLoad에서 tableview.rowHeight = 80 으로도 설정가능
+    }
     
         
 
