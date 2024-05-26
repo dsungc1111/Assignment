@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o8I-k5-sqJ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22690"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,10 +38,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRK-nL-tzf">
-                                            <rect key="frame" x="44" y="316" width="150" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="jPP-CL-d4J"/>
-                                            </constraints>
+                                            <rect key="frame" x="44" y="316" width="179" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -56,7 +53,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzm-a0-SWB">
-                                            <rect key="frame" x="294" y="377" width="42" height="21"/>
+                                            <rect key="frame" x="281" y="372" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -64,12 +61,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kRK-nL-tzf" firstAttribute="top" secondItem="6fF-ay-1LC" secondAttribute="bottom" constant="8" id="74W-KD-vIU"/>
-                                        <constraint firstAttribute="bottom" secondItem="Bzm-a0-SWB" secondAttribute="bottom" constant="20" id="D0B-zo-RaL"/>
-                                        <constraint firstItem="Bzm-a0-SWB" firstAttribute="leading" secondItem="eDX-GK-ROI" secondAttribute="trailing" constant="50" id="GVX-UY-SIO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kRK-nL-tzf" secondAttribute="trailing" constant="150" id="Ifh-4C-1Xg"/>
                                         <constraint firstItem="6fF-ay-1LC" firstAttribute="top" secondItem="Ee6-Z4-rei" secondAttribute="top" constant="8" id="Qzd-XB-4Rq"/>
                                         <constraint firstItem="kRK-nL-tzf" firstAttribute="leading" secondItem="Ee6-Z4-rei" secondAttribute="leadingMargin" constant="24" id="UBt-CT-21D"/>
+                                        <constraint firstItem="Bzm-a0-SWB" firstAttribute="top" secondItem="eDX-GK-ROI" secondAttribute="bottom" constant="10" id="Wre-RJ-yev"/>
                                         <constraint firstItem="eDX-GK-ROI" firstAttribute="top" secondItem="kRK-nL-tzf" secondAttribute="bottom" constant="4" id="fXA-DW-qnW"/>
                                         <constraint firstItem="6fF-ay-1LC" firstAttribute="centerX" secondItem="Ee6-Z4-rei" secondAttribute="centerX" id="h53-b2-XzM"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bzm-a0-SWB" secondAttribute="trailing" constant="70" id="xRS-s9-vMe"/>
                                         <constraint firstItem="eDX-GK-ROI" firstAttribute="leading" secondItem="Ee6-Z4-rei" secondAttribute="leadingMargin" constant="24" id="y5Q-9M-1a3"/>
                                     </constraints>
                                 </tableViewCellContentView>
