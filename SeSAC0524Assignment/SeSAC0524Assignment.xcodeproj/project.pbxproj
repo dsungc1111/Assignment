@@ -9,26 +9,28 @@
 /* Begin PBXBuildFile section */
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
 		8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A4A2C0095940066ACCC /* SceneDelegate.swift */; };
-		8B806A4D2C0095940066ACCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A4C2C0095940066ACCC /* ViewController.swift */; };
 		8B806A502C0095940066ACCC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8B806A4F2C0095940066ACCC /* Base */; };
 		8B806A522C0095950066ACCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B806A512C0095950066ACCC /* Assets.xcassets */; };
 		8B806A552C0095950066ACCC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8B806A542C0095950066ACCC /* Base */; };
 		8B806A892C01A1E90066ACCC /* TravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A882C01A1E90066ACCC /* TravelTableViewController.swift */; };
 		8B806A8B2C01A4FE0066ACCC /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A8A2C01A4FE0066ACCC /* TravelTableViewCell.swift */; };
 		8B806A8E2C01F6F50066ACCC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B806A8D2C01F6F50066ACCC /* Kingfisher */; };
+		8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A912C0300960066ACCC /* RestaurantTableViewController.swift */; };
+		8B806A942C030A570066ACCC /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A932C030A570066ACCC /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B806A482C0095940066ACCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B806A4A2C0095940066ACCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B806A4C2C0095940066ACCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8B806A4F2C0095940066ACCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B806A512C0095950066ACCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B806A542C0095950066ACCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B806A562C0095950066ACCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B806A882C01A1E90066ACCC /* TravelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewController.swift; sourceTree = "<group>"; };
 		8B806A8A2C01A4FE0066ACCC /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
+		8B806A912C0300960066ACCC /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		8B806A932C030A570066ACCC /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +64,34 @@
 		8B806A472C0095940066ACCC /* SeSAC0524Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				8B806A902C03004D0066ACCC /* restaurantGroup */,
+				8B806A8F2C03003D0066ACCC /* travelGroup */,
 				8B806A482C0095940066ACCC /* AppDelegate.swift */,
 				8B806A4A2C0095940066ACCC /* SceneDelegate.swift */,
-				8B806A4C2C0095940066ACCC /* ViewController.swift */,
 				8B806A4E2C0095940066ACCC /* Main.storyboard */,
 				8B806A512C0095950066ACCC /* Assets.xcassets */,
 				8B806A532C0095950066ACCC /* LaunchScreen.storyboard */,
 				8B806A562C0095950066ACCC /* Info.plist */,
+			);
+			path = SeSAC0524Assignment;
+			sourceTree = "<group>";
+		};
+		8B806A8F2C03003D0066ACCC /* travelGroup */ = {
+			isa = PBXGroup;
+			children = (
 				8B806A882C01A1E90066ACCC /* TravelTableViewController.swift */,
 				8B806A8A2C01A4FE0066ACCC /* TravelTableViewCell.swift */,
 			);
-			path = SeSAC0524Assignment;
+			path = travelGroup;
+			sourceTree = "<group>";
+		};
+		8B806A902C03004D0066ACCC /* restaurantGroup */ = {
+			isa = PBXGroup;
+			children = (
+				8B806A912C0300960066ACCC /* RestaurantTableViewController.swift */,
+				8B806A932C030A570066ACCC /* RestaurantTableViewCell.swift */,
+			);
+			path = restaurantGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,10 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B806A4D2C0095940066ACCC /* ViewController.swift in Sources */,
 				8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */,
 				8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */,
+				8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */,
 				8B806A8B2C01A4FE0066ACCC /* TravelTableViewCell.swift in Sources */,
+				8B806A942C030A570066ACCC /* RestaurantTableViewCell.swift in Sources */,
 				8B806A892C01A1E90066ACCC /* TravelTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
