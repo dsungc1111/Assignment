@@ -209,24 +209,31 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var pageTitleLabel: UILabel!
-    
+    @IBOutlet var buttonList: [UIButton]!
     @IBOutlet var searchButton: UIButton!
     
     
     var restaurantList = RestaurantList().restaurantArray
     var favoriteList = RestaurantList().restaurantArray
-   
+    var categoryList = ["한식", "일식", "카페", "경양식", "중식", "분식", "양식", "경양식"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageTitleLabel.textAlignment = .center
         pageTitleLabel.text = "배달ZoonG"
         searchTextField.placeholder = "검색하세요."
         tableView.rowHeight = 200
+        
+        for i in 0...buttonList.count-1 {
+            buttonList[i].setTitle(categoryList[i], for: .normal)
+            buttonList[i].titleLabel?.font = .systemFont(ofSize: 12)
+            buttonList[i].titleLabel?.textColor = .black
+        }
     }
     @objc func likeButtonTapped(sender: UIButton) {
-        restaurantList[sender.tag].like.toggle()
+        favoriteList[sender.tag].like.toggle()
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
-
     }
     @objc func searchButtonTapped() {
         var count = 0
@@ -239,13 +246,10 @@ class RestaurantTableViewController: UITableViewController {
         }
         if count == 0 {favoriteList = restaurantList}
         tableView.reloadData()
-       
     }
     
     
-    
-    
-    
+
     // 섹션 개수 > 버튼, 음식저머 소개
 
     
@@ -307,6 +311,22 @@ class RestaurantTableViewController: UITableViewController {
     
     
         
+    @IBAction func categoryButtonTapped(_ sender: UIButton) {
+        //var count = 0
+        favoriteList.removeAll()
+        
+        guard let title = buttonList[sender.tag].currentTitle else {
+            return
+        }
+        for i in 0...restaurantList.count-1 {
+            if restaurantList[i].category == title {
+                favoriteList.insert(restaurantList[i], at: 0)
+                //      count += 1
+            }
+        }
+        //if count == 0 {favoriteList = restaurantList}
+        tableView.reloadData()
+    }
     
     
     
