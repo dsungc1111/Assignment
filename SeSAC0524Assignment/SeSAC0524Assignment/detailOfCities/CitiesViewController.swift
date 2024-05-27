@@ -7,6 +7,8 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
+
 class CitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     var list = TravelInfo().travel

@@ -11,7 +11,7 @@ class CitiesTableViewCell: UITableViewCell {
 
     @IBOutlet var tourSpotLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var starImageView: UIImageView!
     @IBOutlet var scoreNumberLabel: UILabel!
     @IBOutlet var saveNumberLabel: UILabel!
     @IBOutlet var spotImageView: UIImageView!
@@ -42,6 +42,7 @@ class CitiesTableViewCell: UITableViewCell {
         spotImageView.layer.cornerRadius = 5
         
         likeButton.tintColor = .white
+        //cosmosView.rating = 4
         
     }
     

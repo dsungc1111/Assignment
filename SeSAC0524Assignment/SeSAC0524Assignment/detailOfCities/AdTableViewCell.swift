@@ -38,7 +38,6 @@ class AdTableViewCell: UITableViewCell {
         
     }
     func configureAd(data: Travel) {
-        
         adMainLabel.text = data.title
     }
     
