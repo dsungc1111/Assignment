@@ -70,6 +70,8 @@ class ShoppingTableViewController: UITableViewController {
         //checkmark.square.fill
         let data = things[indexPath.row]
         
+        
+        
         let check = data.check ? "checkmark.square.fill" : "checkmark.square"
         let imageCheck = UIImage(systemName: check)
         

@@ -231,10 +231,12 @@ class RestaurantTableViewController: UITableViewController {
             buttonList[i].titleLabel?.textColor = .black
         }
     }
+    // 즐겨찾기 버튼
     @objc func likeButtonTapped(sender: UIButton) {
         favoriteList[sender.tag].like.toggle()
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
+    // 서치버튼
     @objc func searchButtonTapped() {
         var count = 0
         favoriteList.removeAll()
@@ -265,7 +267,7 @@ class RestaurantTableViewController: UITableViewController {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         
       
-        let data = favoriteList[indexPath.row]
+        var data = favoriteList[indexPath.row]
   
         
         
@@ -286,7 +288,8 @@ class RestaurantTableViewController: UITableViewController {
         cell.minimumPriceLabel.font = .systemFont(ofSize: 12)
         
         // 북마크
-        let image = favoriteList[indexPath.row].like ? "star.fill" : "star"
+        
+        let image = data.like ? "star.fill" : "star"
         let bookmark = UIImage(systemName: image)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.setImage(bookmark, for: .normal)
