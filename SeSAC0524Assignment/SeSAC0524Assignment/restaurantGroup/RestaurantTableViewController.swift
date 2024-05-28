@@ -212,9 +212,11 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var buttonList: [UIButton]!
     @IBOutlet var searchButton: UIButton!
     
+    @IBOutlet var likeListButton: UIButton!
     
     var restaurantList = RestaurantList().restaurantArray
     var favoriteList = RestaurantList().restaurantArray
+    var dd: [Restaurant] = []
     var categoryList = ["한식", "일식", "카페", "경양식", "중식", "분식", "양식", "경양식"]
     
     
@@ -230,20 +232,23 @@ class RestaurantTableViewController: UITableViewController {
             buttonList[i].titleLabel?.font = .systemFont(ofSize: 12)
             buttonList[i].titleLabel?.textColor = .black
         }
+        
     }
     // 즐겨찾기 버튼
     @objc func likeButtonTapped(sender: UIButton) {
         favoriteList[sender.tag].like.toggle()
+//        let onAndOff = favoriteList[sender.tag].like
+//        UserDefaults.standard.setValue(onAndOff, forKey: "\(sender.tag)")
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
     // 서치버튼
     @objc func searchButtonTapped() {
         var count = 0
         favoriteList.removeAll()
-        for i in 0...restaurantList.count-1 {
-            if searchTextField.text == restaurantList[i].category {
-                favoriteList.insert(restaurantList[i], at: 0)
-                count += 1
+        
+        for item in restaurantList {
+            if item.name.contains(searchTextField.text!) || item.category.contains(searchTextField.text!) {
+                favoriteList.append(item)
             }
         }
         if count == 0 {favoriteList = restaurantList}
@@ -252,7 +257,7 @@ class RestaurantTableViewController: UITableViewController {
     
     
 
-    // 섹션 개수 > 버튼, 음식저머 소개
+    // 섹션 개수 > 버튼, 음식점 소개
 
     
     // 행 개수
@@ -263,50 +268,23 @@ class RestaurantTableViewController: UITableViewController {
     // 데이터
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell") as! RestaurantTableViewCell
-    
-        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+      
         
+        
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+
       
         var data = favoriteList[indexPath.row]
-  
+        
+//        data.like = UserDefaults.standard.bool(forKey: "\(indexPath.row)")
         
         
-        //가게 이미지
-        let url = URL(string: data.image)
-        cell.restaurantImageView.kf.setImage(with: url)
-        cell.restaurantImageView.contentMode = .scaleAspectFill
-        cell.restaurantImageView.layer.cornerRadius = 10
-        //가게이름
-        cell.restaurantNameLabel.text = data.name
-        cell.restaurantNameLabel.font = .boldSystemFont(ofSize: 15)
-        cell.restaurantNameLabel.numberOfLines = 0
-        //전화
-        cell.phoneNumberLabel.text = data.phoneNumber
-        cell.phoneNumberLabel.font = .systemFont(ofSize: 12)
-        //최소주문
-        cell.minimumPriceLabel.text = "최소주문 \(data.price.formatted())원"
-        cell.minimumPriceLabel.font = .systemFont(ofSize: 12)
+        cell.figureLayout()
+        cell.figureCell(data: data)
         
-        // 북마크
-        
-        let image = data.like ? "star.fill" : "star"
-        let bookmark = UIImage(systemName: image)
         cell.likeButton.tag = indexPath.row
-        cell.likeButton.setImage(bookmark, for: .normal)
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
-
-        //주소
-        let findLocation = CLLocation(latitude: favoriteList[indexPath.row].latitude, longitude: favoriteList[indexPath.row].longitude)
-        let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "Ko-kr")
-        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
-            if let address: [CLPlacemark] = placemarks {
-                if let name: String = address.last?.name { cell.adressLabel.text = "주소 : \(name)" }
-            }
-        })
-        
-        cell.adressLabel.font = .systemFont(ofSize: 12)
         
         return cell
         
@@ -315,7 +293,7 @@ class RestaurantTableViewController: UITableViewController {
     
         
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
-        //var count = 0
+        var count = 0
         favoriteList.removeAll()
         
         guard let title = buttonList[sender.tag].currentTitle else {
@@ -323,14 +301,34 @@ class RestaurantTableViewController: UITableViewController {
         }
         for i in 0...restaurantList.count-1 {
             if restaurantList[i].category == title {
-                favoriteList.insert(restaurantList[i], at: 0)
-                //      count += 1
+                favoriteList.insert(restaurantList[i], at: count)
+                      count += 1
             }
         }
-        //if count == 0 {favoriteList = restaurantList}
+        if count == 0 {favoriteList = restaurantList}
         tableView.reloadData()
     }
     
+    @IBAction func likeListButtonTapped(_ sender: UIButton) {
+      //  favoriteList.removeAll()
+        var count = 0
+//        for item in restaurantList {
+//            if item.like == true  {
+//                favoriteList.insert(item, at: count)
+//                count += 1
+//            }
+//        }
+        for i in 0...favoriteList.count-1 {
+            if favoriteList[i].like == true {
+                dd.insert(favoriteList[i], at: count)
+                count += 1
+            }
+        }
+        favoriteList = dd
+        
+        tableView.reloadData()
+        
+    }
     
     
     
