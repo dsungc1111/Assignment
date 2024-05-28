@@ -30,12 +30,13 @@ class ReTourTableViewCell: UITableViewCell {
     
     func tourLayout() {
         
-        titleLabel.font = .boldSystemFont(ofSize: 20)
+        fontSetting(titleLabel, 20)
+        fontSetting(descriptionLabel, 15)
+        fontSetting(scoreLabel, 12)
         
-        descriptionLabel.font = .systemFont(ofSize: 15)
+        
         descriptionLabel.numberOfLines = 0
         
-        scoreLabel.font = .systemFont(ofSize: 12)
         scoreLabel.textColor = .gray
       
         

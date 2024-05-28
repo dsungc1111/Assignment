@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */; };
+		8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */; };
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
 		8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A4A2C0095940066ACCC /* SceneDelegate.swift */; };
 		8B806A502C0095940066ACCC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8B806A4F2C0095940066ACCC /* Base */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Extension.swift"; sourceTree = "<group>"; };
+		8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewCell+Extention.swift"; sourceTree = "<group>"; };
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B806A482C0095940066ACCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B806A4A2C0095940066ACCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				8BAB09C92C054BBC002DA2F5 /* ReAdTableViewCell.xib */,
 				8BAB09CE2C054BFE002DA2F5 /* ReTourTableViewCell.swift */,
 				8BAB09CF2C054BFE002DA2F5 /* ReTourTableViewCell.xib */,
+				8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */,
 			);
 			path = 0527Review;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				8BAB09BC2C047C0B002DA2F5 /* CitiesTableViewCell.swift in Sources */,
 				8BAB09C02C048189002DA2F5 /* AdTableViewCell.swift in Sources */,
 				8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */,
+				8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */,
 				8B806A8B2C01A4FE0066ACCC /* TravelTableViewCell.swift in Sources */,
 				8BAB09C72C054B8B002DA2F5 /* ReviewViewController.swift in Sources */,
 				8BAB09B92C047BE4002DA2F5 /* CitiesViewController.swift in Sources */,
