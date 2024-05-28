@@ -214,6 +214,8 @@ class RestaurantTableViewController: UITableViewController {
     
     @IBOutlet var likeListButton: UIButton!
     
+    
+    
     var restaurantList = RestaurantList().restaurantArray
     var favoriteList = RestaurantList().restaurantArray
     var dd: [Restaurant] = []
@@ -234,16 +236,18 @@ class RestaurantTableViewController: UITableViewController {
         }
         
     }
-    // 즐겨찾기 버튼
+     //즐겨찾기 버튼
     @objc func likeButtonTapped(sender: UIButton) {
+       // print("befor toggle = ", favoriteList[sender.tag].like)
         favoriteList[sender.tag].like.toggle()
-//        let onAndOff = favoriteList[sender.tag].like
-//        UserDefaults.standard.setValue(onAndOff, forKey: "\(sender.tag)")
+       // print("after toggle = ", favoriteList[sender.tag].like)
+        UserDefaults.standard.setValue(favoriteList[sender.tag].like, forKey: "\(sender.tag)")
+       // print(sender.tag, favoriteList[sender.tag].like)
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
     // 서치버튼
     @objc func searchButtonTapped() {
-        var count = 0
+        let count = 0
         favoriteList.removeAll()
         
         for item in restaurantList {
@@ -275,8 +279,12 @@ class RestaurantTableViewController: UITableViewController {
 
       
         var data = favoriteList[indexPath.row]
+        //print(data.like)
+        data.like = UserDefaults.standard.bool(forKey: "\(indexPath.row)")
+       // print(data.like)
         
-//        data.like = UserDefaults.standard.bool(forKey: "\(indexPath.row)")
+        // ⭐️⭐️⭐️⭐️⭐️
+        favoriteList[indexPath.row].like = data.like
         
         
         cell.figureLayout()
@@ -329,6 +337,10 @@ class RestaurantTableViewController: UITableViewController {
         tableView.reloadData()
         
     }
+    
+    
+    
+    
     
     
     
