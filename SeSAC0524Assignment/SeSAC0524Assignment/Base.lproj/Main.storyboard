@@ -502,7 +502,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eLA-Qy-KP8">
-                                <rect key="frame" x="30" y="120" width="333" height="32"/>
+                                <rect key="frame" x="30" y="174" width="333" height="32"/>
                                 <segments>
                                     <segment title="모두"/>
                                     <segment title="국내"/>
@@ -513,9 +513,16 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-1v-Tlz">
-                                <rect key="frame" x="0.0" y="161" width="393" height="608"/>
+                                <rect key="frame" x="0.0" y="215" width="393" height="554"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Kfg-xm-U2q">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3Sh-Sh-HUy" id="FzW-7e-und"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pqq-AO-OjJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -523,15 +530,19 @@
                             <constraint firstItem="Pqq-AO-OjJ" firstAttribute="bottom" secondItem="Veb-1v-Tlz" secondAttribute="bottom" id="7iK-CX-LHg"/>
                             <constraint firstItem="Pqq-AO-OjJ" firstAttribute="trailing" secondItem="Veb-1v-Tlz" secondAttribute="trailing" id="Agu-a6-P9Q"/>
                             <constraint firstItem="Veb-1v-Tlz" firstAttribute="leading" secondItem="Pqq-AO-OjJ" secondAttribute="leading" id="Gy0-Y1-Ocy"/>
+                            <constraint firstItem="Kfg-xm-U2q" firstAttribute="top" secondItem="Pqq-AO-OjJ" secondAttribute="top" id="NGD-B3-Okr"/>
+                            <constraint firstItem="Kfg-xm-U2q" firstAttribute="leading" secondItem="Pqq-AO-OjJ" secondAttribute="leading" id="OcZ-DE-h2P"/>
                             <constraint firstItem="eLA-Qy-KP8" firstAttribute="leading" secondItem="Pqq-AO-OjJ" secondAttribute="leading" constant="30" id="SW2-yF-bbI"/>
+                            <constraint firstItem="Kfg-xm-U2q" firstAttribute="trailing" secondItem="Pqq-AO-OjJ" secondAttribute="trailing" id="eVF-3K-OoF"/>
                             <constraint firstItem="Veb-1v-Tlz" firstAttribute="top" secondItem="eLA-Qy-KP8" secondAttribute="bottom" constant="10" id="iFc-5h-AX5"/>
-                            <constraint firstItem="eLA-Qy-KP8" firstAttribute="top" secondItem="YxL-fl-PfH" secondAttribute="top" constant="120" id="x1J-X1-X6q"/>
+                            <constraint firstItem="eLA-Qy-KP8" firstAttribute="top" secondItem="Kfg-xm-U2q" secondAttribute="bottom" constant="15" id="x1J-X1-X6q"/>
                             <constraint firstItem="Pqq-AO-OjJ" firstAttribute="trailing" secondItem="eLA-Qy-KP8" secondAttribute="trailing" constant="30" id="yVk-MK-tXk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기도시" id="GaM-iC-FY1"/>
                     <connections>
                         <outlet property="cityTableView" destination="Veb-1v-Tlz" id="QA3-bw-tps"/>
+                        <outlet property="searchTextBar" destination="Kfg-xm-U2q" id="DwM-DP-2QB"/>
                         <outlet property="travelSegmentedControl" destination="eLA-Qy-KP8" id="9yQ-wt-1Bz"/>
                     </connections>
                 </viewController>

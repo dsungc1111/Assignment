@@ -15,10 +15,13 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var travelSegmentedControl: UISegmentedControl!
     var anotherList: [City] = []
     
+    @IBOutlet var searchTextBar: UISearchBar!
+    
     @IBOutlet var cityTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextBar.delegate = self
         cityTableView.rowHeight = 190
         cityTableView.delegate = self
         cityTableView.dataSource = self
@@ -40,10 +43,6 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         let data = list[indexPath.row]
         
         cell.configureCell(data: data)
-        
-        
-        
-        
         return cell
     }
     
@@ -74,6 +73,51 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    
+    
+    
+}
+extension PopularCityViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        anotherList = []
+        list = newList
+        
+        let number = travelSegmentedControl.selectedSegmentIndex
+        
+        if number == 1 {
+            for item in newList {
+                if item.domestic_travel == true {
+                    anotherList.append(item)
+                }
+            }
+        } else if number == 2 {
+            for item in newList {
+                if item.domestic_travel == false {
+                    anotherList.append(item)
+                }
+            }
+        } else {
+            anotherList = list
+        }
+        
+        list = anotherList
+        anotherList = []
+        
+        
+        guard let text = searchBar.text else {return}
+        
+        for item in list {
+            if item.city_english_name.lowercased().contains(text) || item.city_name.contains(text) || item.city_explain.contains(text) {
+                anotherList.append(item)
+            }
+        }
+        
+        list = anotherList
+        
+        cityTableView.reloadData()
+    }
+  
     
     
     
