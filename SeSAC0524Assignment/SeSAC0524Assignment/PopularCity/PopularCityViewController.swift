@@ -15,6 +15,10 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet var travelSegmentedControl: UISegmentedControl!
     var anotherList: [City] = []
     
+    @IBOutlet var recentSearchView: UIView!
+    
+    
+    
     @IBOutlet var searchTextBar: UISearchBar!
     
     @IBOutlet var cityTableView: UITableView!
@@ -27,6 +31,8 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         cityTableView.dataSource = self
         let xib = UINib(nibName: PopularCityTableViewCell.identifier, bundle: nil)
         cityTableView.register(xib, forCellReuseIdentifier: PopularCityTableViewCell.identifier)
+        
+        recentSearchView.isHidden = true
         
     }
     
@@ -79,6 +85,14 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
 }
 extension PopularCityViewController: UISearchBarDelegate {
     
+    
+    
+
+    
+    
+    
+    
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         anotherList = []
         list = newList
@@ -118,6 +132,11 @@ extension PopularCityViewController: UISearchBarDelegate {
         cityTableView.reloadData()
     }
   
+    
+    
+    
+    
+    
     
     
     
