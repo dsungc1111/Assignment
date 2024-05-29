@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3E9B392C07252F000D9D22 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B382C07252F000D9D22 /* Detail.storyboard */; };
+		8B3E9B3C2C07254D000D9D22 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B3B2C07254D000D9D22 /* DetailViewController.swift */; };
+		8B3E9B3E2C072691000D9D22 /* AdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B3D2C072691000D9D22 /* AdViewController.swift */; };
 		8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */; };
 		8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */; };
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3E9B382C07252F000D9D22 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		8B3E9B3B2C07254D000D9D22 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8B3E9B3D2C072691000D9D22 /* AdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewController.swift; sourceTree = "<group>"; };
 		8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Extension.swift"; sourceTree = "<group>"; };
 		8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewCell+Extention.swift"; sourceTree = "<group>"; };
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B3E9B3A2C07253C000D9D22 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8B3E9B382C07252F000D9D22 /* Detail.storyboard */,
+				8B3E9B3B2C07254D000D9D22 /* DetailViewController.swift */,
+				8B3E9B3D2C072691000D9D22 /* AdViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		8B806A3C2C0095930066ACCC = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +157,7 @@
 		8BAB09C52C054B68002DA2F5 /* 0527Review */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E9B3A2C07253C000D9D22 /* Detail */,
 				8BAB09C62C054B8B002DA2F5 /* ReviewViewController.swift */,
 				8BAB09C82C054BBC002DA2F5 /* ReAdTableViewCell.swift */,
 				8BAB09C92C054BBC002DA2F5 /* ReAdTableViewCell.xib */,
@@ -220,6 +237,7 @@
 				8BAB09C12C048189002DA2F5 /* AdTableViewCell.xib in Resources */,
 				8BAB09BD2C047C0B002DA2F5 /* CitiesTableViewCell.xib in Resources */,
 				8B806A522C0095950066ACCC /* Assets.xcassets in Resources */,
+				8B3E9B392C07252F000D9D22 /* Detail.storyboard in Resources */,
 				8B806A552C0095950066ACCC /* Base in Resources */,
 				8B806A502C0095940066ACCC /* Base in Resources */,
 				8BAB09D12C054BFE002DA2F5 /* ReTourTableViewCell.xib in Resources */,
@@ -240,7 +258,9 @@
 				8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */,
 				8BAB09BC2C047C0B002DA2F5 /* CitiesTableViewCell.swift in Sources */,
 				8BAB09C02C048189002DA2F5 /* AdTableViewCell.swift in Sources */,
+				8B3E9B3E2C072691000D9D22 /* AdViewController.swift in Sources */,
 				8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */,
+				8B3E9B3C2C07254D000D9D22 /* DetailViewController.swift in Sources */,
 				8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */,
 				8B806A8B2C01A4FE0066ACCC /* TravelTableViewCell.swift in Sources */,
 				8BAB09C72C054B8B002DA2F5 /* ReviewViewController.swift in Sources */,

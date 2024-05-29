@@ -152,7 +152,7 @@
         <!--Review View Controller-->
         <scene sceneID="9fO-rh-oSP">
             <objects>
-                <viewController id="0Dc-7S-Gqs" customClass="ReviewViewController" customModule="SeSAC0524Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="0Dc-7S-Gqs" customClass="ReviewViewController" customModule="SeSAC0524Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZEP-nX-PU0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

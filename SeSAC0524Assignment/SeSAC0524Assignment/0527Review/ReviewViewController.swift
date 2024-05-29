@@ -24,6 +24,7 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         mainTableView.register(adadXib, forCellReuseIdentifier: "ReAdTableViewCell")
         let tourSpotXib = UINib(nibName: "ReTourTableViewCell", bundle: nil)
         mainTableView.register(tourSpotXib, forCellReuseIdentifier: "ReTourTableViewCell")
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     
@@ -52,12 +53,34 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         
-      
-
-        
-       
-        
-        
         
     }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = guideList[indexPath.row]
+        
+        if data.ad {
+            let sb = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "AdViewController") as! AdViewController
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav, animated: true)
+            
+            
+            
+        } else {
+            let sb = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    
+    
+    
 }

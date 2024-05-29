@@ -12,14 +12,9 @@ class ReTourTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-    
     @IBOutlet var starLabel: UILabel!
-    
     @IBOutlet var scoreLabel: UILabel!
-    
-    
     @IBOutlet var tourImageView: UIImageView!
-    
     @IBOutlet var likeButton: UIButton!
     
     

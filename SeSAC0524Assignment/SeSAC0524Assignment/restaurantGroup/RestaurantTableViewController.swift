@@ -233,6 +233,7 @@ class RestaurantTableViewController: UITableViewController {
             buttonList[i].setTitle(categoryList[i], for: .normal)
             buttonList[i].titleLabel?.font = .systemFont(ofSize: 12)
             buttonList[i].titleLabel?.textColor = .black
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(i)")
         }
         
     }
@@ -242,7 +243,9 @@ class RestaurantTableViewController: UITableViewController {
         favoriteList[sender.tag].like.toggle()
        // print("after toggle = ", favoriteList[sender.tag].like)
         UserDefaults.standard.setValue(favoriteList[sender.tag].like, forKey: "\(sender.tag)")
+        restaurantList[sender.tag].like = favoriteList[sender.tag].like
        // print(sender.tag, favoriteList[sender.tag].like)
+        print(restaurantList[sender.tag].like)
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
     // 서치버튼
@@ -284,8 +287,7 @@ class RestaurantTableViewController: UITableViewController {
        // print(data.like)
         
         // ⭐️⭐️⭐️⭐️⭐️
-        favoriteList[indexPath.row].like = data.like
-        
+        restaurantList[indexPath.row].like = data.like
         
         cell.figureLayout()
         cell.figureCell(data: data)
@@ -317,24 +319,26 @@ class RestaurantTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    
+    
+    
     @IBAction func likeListButtonTapped(_ sender: UIButton) {
-      //  favoriteList.removeAll()
-        var count = 0
-//        for item in restaurantList {
-//            if item.like == true  {
-//                favoriteList.insert(item, at: count)
-//                count += 1
+        // favoriteList > 화면에 보여지는 리스트
+        // restaurantList > 전체 리스트
+        // 이전 코드에서 favoriteList의 like만 교체 이 값을
+        // restauranList에 넣어주고 중식 카테고리에서 즐겨찾기 버튼을 눌러도 한식카테고리의 즐겨찾기가 나오게
+//        favoriteList.removeAll()
+//        var count = 0
+//
+//
+//        for i in 0...restaurantList.count-1 {
+//            if UserDefaults.standard.bool(forKey: "\(i)") {
+//                favoriteList.append(restaurantList[i])
 //            }
 //        }
-        for i in 0...favoriteList.count-1 {
-            if favoriteList[i].like == true {
-                dd.insert(favoriteList[i], at: count)
-                count += 1
-            }
-        }
-        favoriteList = dd
-        
-        tableView.reloadData()
+//        
+//        tableView.reloadData()
         
     }
     

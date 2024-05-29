@@ -13,6 +13,7 @@ class ReAdTableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var adBadgeLabel: UILabel!
+    
     let colors = [UIColor.systemTeal, UIColor.blue, UIColor.yellow, UIColor.red, UIColor.brown, UIColor.green, UIColor.orange]
         
     override  func awakeFromNib() {
