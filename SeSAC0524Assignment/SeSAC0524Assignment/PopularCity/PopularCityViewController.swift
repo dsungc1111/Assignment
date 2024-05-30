@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class PopularCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PopularCityViewController: UIViewController {
     
     var list = CityInfo().city
     var newList = CityInfo().city
@@ -37,21 +37,6 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCityTableViewCell", for: indexPath) as! PopularCityTableViewCell
-        
-        let data = list[indexPath.row]
-        
-        cell.configureCell(data: data)
-        return cell
-    }
-    
 
     
     @IBAction func segmentedConrolUsed(_ sender: UISegmentedControl) {
@@ -75,23 +60,13 @@ class PopularCityViewController: UIViewController, UITableViewDelegate, UITableV
         list = anotherList
         
         cityTableView.reloadData()
-        
-        
     }
     
     
     
     
 }
-extension PopularCityViewController: UISearchBarDelegate {
-    
-    
-    
-
-    
-    
-    
-    
+extension PopularCityViewController: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         anotherList = []
@@ -131,7 +106,22 @@ extension PopularCityViewController: UISearchBarDelegate {
         
         cityTableView.reloadData()
     }
-  
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PopularCityTableViewCell", for: indexPath) as! PopularCityTableViewCell
+        
+        let data = list[indexPath.row]
+        
+        cell.configureCell(data: data)
+        return cell
+    }
+    
     
     
     

@@ -16,11 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ffsfsdfdsfsdfdsfsds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNf-pD-foI">
-                                <rect key="frame" x="96.666666666666686" y="351" width="200" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dt9-3H-v2n">
+                                <rect key="frame" x="0.0" y="59" width="393" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="GGS-j3-9iB"/>
-                                    <constraint firstAttribute="height" constant="150" id="Mre-tb-lDc"/>
+                                    <constraint firstAttribute="height" constant="400" id="Ra1-0Z-5Zx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mya-yH-Bc4">
+                                <rect key="frame" x="46" y="559" width="301" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Ryd-gO-8S7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -30,10 +35,18 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qNf-pD-foI" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="aG8-nX-zq0"/>
-                            <constraint firstItem="qNf-pD-foI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ipm-fD-F7z"/>
+                            <constraint firstItem="Mya-yH-Bc4" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" constant="30" id="5LN-cp-a9Q"/>
+                            <constraint firstItem="Dt9-3H-v2n" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8kl-An-inT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dt9-3H-v2n" secondAttribute="trailing" id="CSh-BZ-GgS"/>
+                            <constraint firstItem="Dt9-3H-v2n" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="EcC-X4-0dT"/>
+                            <constraint firstItem="Mya-yH-Bc4" firstAttribute="top" secondItem="Dt9-3H-v2n" secondAttribute="bottom" constant="100" id="Fqt-9T-4j9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mya-yH-Bc4" secondAttribute="trailing" constant="30" id="NTl-fB-uLg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selectedImageView" destination="Dt9-3H-v2n" id="EtX-hH-8ub"/>
+                        <outlet property="selectedLabel" destination="Mya-yH-Bc4" id="NEF-na-4ZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

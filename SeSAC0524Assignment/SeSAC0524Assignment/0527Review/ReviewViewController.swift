@@ -71,16 +71,46 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             
         } else {
+            //
             let sb = UIStoryboard(name: "Detail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//            let url = URL(string: data.travel_image ?? "star.fill")
+//            vc.selectedImageView.kf.setImage(with: url)
+            print(data.title)
+            
+            
+            
+            if data.ad == false {
+//                vc.selectedLabel.text = "\(data.title)\n "
+                vc.titleString = "\(data.title) \n \(data.description!)"
+                vc.mainImage = data.travel_image!
+            }
+            
+            
+            
+            
+//            guard let selectedLabel = vc.selectedLabel else {
+//               print("ㅜnil입니다.")
+//                return
+//            }
+
+            
+            
             navigationController?.pushViewController(vc, animated: true)
         }
+        
+        
+        
+        
+        
         
         
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     
-    
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print(#function)
+//    }
+//    
 }
