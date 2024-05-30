@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Y6W-OH-hqX" customClass="MapViewController" customModule="SeSAC0524Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5v0-KW-wZR">
+                                <rect key="frame" x="0.0" y="139" width="393" height="679"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IAe-GN-xoH">
+                                <rect key="frame" x="0.0" y="69" width="393" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hX4-45-7wp"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="전체"/>
+                                    <segment title="한식"/>
+                                    <segment title="일식"/>
+                                    <segment title="카페"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categoryClicked:" destination="Y6W-OH-hqX" eventType="valueChanged" id="zsF-C5-uwV"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5v0-KW-wZR" firstAttribute="top" secondItem="IAe-GN-xoH" secondAttribute="bottom" constant="20" id="1I8-Mv-LCh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5v0-KW-wZR" secondAttribute="trailing" id="9zt-pc-vUN"/>
+                            <constraint firstItem="5v0-KW-wZR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NMv-hH-hw4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IAe-GN-xoH" secondAttribute="trailing" id="eNq-Xm-12k"/>
+                            <constraint firstItem="IAe-GN-xoH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="gus-7t-ZlP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5v0-KW-wZR" secondAttribute="bottom" id="uCi-II-kBx"/>
+                            <constraint firstItem="IAe-GN-xoH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zIL-CK-yi5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="5v0-KW-wZR" id="NbP-WV-PEQ"/>
+                        <outlet property="pickRestaurantControl" destination="IAe-GN-xoH" id="kdN-Su-DBd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

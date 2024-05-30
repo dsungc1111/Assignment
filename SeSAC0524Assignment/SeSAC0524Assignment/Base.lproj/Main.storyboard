@@ -450,7 +450,17 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1569" y="-796"/>
+            <point key="canvasLocation" x="3422.1374045801526" y="-796.47887323943667"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="DeT-yE-y2x">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="0gu-HZ-Mri" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6ZN-FC-4c3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZl-UN-F3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491.60305343511448" y="-863.38028169014092"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kPo-ek-06y">
@@ -468,6 +478,7 @@
                         <segue destination="RGS-ci-VD7" kind="relationship" relationship="viewControllers" id="dCF-6S-fOP"/>
                         <segue destination="BNg-M2-daQ" kind="relationship" relationship="viewControllers" id="eOR-If-5JW"/>
                         <segue destination="gxS-qd-6Iz" kind="relationship" relationship="viewControllers" id="dt7-3t-58d"/>
+                        <segue destination="XQT-GE-RPn" kind="relationship" relationship="viewControllers" id="CIG-EF-bea"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdn-Bf-a44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -580,6 +591,25 @@
             </objects>
             <point key="canvasLocation" x="1556.4885496183206" y="629.57746478873241"/>
         </scene>
+        <!--MAP-->
+        <scene sceneID="Zoj-Wp-CpO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQT-GE-RPn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="MAP" image="map" catalog="system" id="MXj-mN-HNs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K7S-Hk-QgN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0gu-HZ-Mri" kind="relationship" relationship="rootViewController" id="eRO-Qh-Te7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1l-k6-HNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434.35114503816794" y="-863.38028169014092"/>
+        </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
@@ -587,6 +617,7 @@
         <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
         <image name="magazine" catalog="system" width="110" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>

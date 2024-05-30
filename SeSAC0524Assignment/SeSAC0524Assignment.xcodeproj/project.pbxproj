@@ -15,6 +15,8 @@
 		8B3E9B452C0742BF000D9D22 /* PopularCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B422C0742BF000D9D22 /* PopularCityTableViewCell.swift */; };
 		8B3E9B472C0742D6000D9D22 /* PopularCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B462C0742D6000D9D22 /* PopularCityViewController.swift */; };
 		8B3E9B522C087261000D9D22 /* BuyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */; };
+		8B3E9B552C087792000D9D22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B542C087792000D9D22 /* MapViewController.swift */; };
+		8B3E9B572C0877A2000D9D22 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B562C0877A2000D9D22 /* Map.storyboard */; };
 		8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */; };
 		8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */; };
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 		8B3E9B432C0742BF000D9D22 /* PopularCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCityTableViewCell.xib; sourceTree = "<group>"; };
 		8B3E9B462C0742D6000D9D22 /* PopularCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCityViewController.swift; sourceTree = "<group>"; };
 		8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPageViewController.swift; sourceTree = "<group>"; };
+		8B3E9B542C087792000D9D22 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8B3E9B562C0877A2000D9D22 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Extension.swift"; sourceTree = "<group>"; };
 		8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewCell+Extention.swift"; sourceTree = "<group>"; };
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,15 @@
 			path = PopularCity;
 			sourceTree = "<group>";
 		};
+		8B3E9B532C08777D000D9D22 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				8B3E9B542C087792000D9D22 /* MapViewController.swift */,
+				8B3E9B562C0877A2000D9D22 /* Map.storyboard */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		8B806A3C2C0095930066ACCC = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 		8B806A472C0095940066ACCC /* SeSAC0524Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E9B532C08777D000D9D22 /* MapView */,
 				8B3E9B3F2C074079000D9D22 /* PopularCity */,
 				8BAB09C52C054B68002DA2F5 /* 0527Review */,
 				8BAB09B52C04799C002DA2F5 /* detailOfCities */,
@@ -264,6 +278,7 @@
 				8B3E9B392C07252F000D9D22 /* Detail.storyboard in Resources */,
 				8B806A552C0095950066ACCC /* Base in Resources */,
 				8B806A502C0095940066ACCC /* Base in Resources */,
+				8B3E9B572C0877A2000D9D22 /* Map.storyboard in Resources */,
 				8BAB09D12C054BFE002DA2F5 /* ReTourTableViewCell.xib in Resources */,
 				8BAB09CB2C054BBC002DA2F5 /* ReAdTableViewCell.xib in Resources */,
 			);
@@ -287,6 +302,7 @@
 				8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */,
 				8B3E9B472C0742D6000D9D22 /* PopularCityViewController.swift in Sources */,
 				8B3E9B3C2C07254D000D9D22 /* DetailViewController.swift in Sources */,
+				8B3E9B552C087792000D9D22 /* MapViewController.swift in Sources */,
 				8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */,
 				8B806A8B2C01A4FE0066ACCC /* TravelTableViewCell.swift in Sources */,
 				8BAB09C72C054B8B002DA2F5 /* ReviewViewController.swift in Sources */,

@@ -37,16 +37,17 @@ class ReviewViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell1 = tableView.dequeueReusableCell(withIdentifier: "ReTourTableViewCell", for: indexPath) as! ReTourTableViewCell
-        let cell2 = tableView.dequeueReusableCell(withIdentifier: "ReAdTableViewCell", for: indexPath) as! ReAdTableViewCell
+
         
         let data = guideList[indexPath.row]
         
         if data.ad == true {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "ReAdTableViewCell", for: indexPath) as! ReAdTableViewCell
             cell2.configureCell(data: data)
             tableView.rowHeight = 120
             return cell2
         } else {
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "ReTourTableViewCell", for: indexPath) as! ReTourTableViewCell
             tableView.rowHeight = 180
             cell1.configureCell(data: data)
             return cell1
