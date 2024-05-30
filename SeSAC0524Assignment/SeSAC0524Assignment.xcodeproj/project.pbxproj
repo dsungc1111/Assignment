@@ -14,6 +14,7 @@
 		8B3E9B442C0742BF000D9D22 /* PopularCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B432C0742BF000D9D22 /* PopularCityTableViewCell.xib */; };
 		8B3E9B452C0742BF000D9D22 /* PopularCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B422C0742BF000D9D22 /* PopularCityTableViewCell.swift */; };
 		8B3E9B472C0742D6000D9D22 /* PopularCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B462C0742D6000D9D22 /* PopularCityViewController.swift */; };
+		8B3E9B522C087261000D9D22 /* BuyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */; };
 		8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */; };
 		8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */; };
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		8B3E9B422C0742BF000D9D22 /* PopularCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCityTableViewCell.swift; sourceTree = "<group>"; };
 		8B3E9B432C0742BF000D9D22 /* PopularCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularCityTableViewCell.xib; sourceTree = "<group>"; };
 		8B3E9B462C0742D6000D9D22 /* PopularCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCityViewController.swift; sourceTree = "<group>"; };
+		8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPageViewController.swift; sourceTree = "<group>"; };
 		8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Extension.swift"; sourceTree = "<group>"; };
 		8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewCell+Extention.swift"; sourceTree = "<group>"; };
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				8B3E9B382C07252F000D9D22 /* Detail.storyboard */,
 				8B3E9B3B2C07254D000D9D22 /* DetailViewController.swift */,
 				8B3E9B3D2C072691000D9D22 /* AdViewController.swift */,
+				8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */,
 				8B3E9B412C0741AC000D9D22 /* CityInfo.swift in Sources */,
 				8BAB09D02C054BFE002DA2F5 /* ReTourTableViewCell.swift in Sources */,
+				8B3E9B522C087261000D9D22 /* BuyPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
