@@ -17,7 +17,8 @@
 		8B3E9B522C087261000D9D22 /* BuyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */; };
 		8B3E9B552C087792000D9D22 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B542C087792000D9D22 /* MapViewController.swift */; };
 		8B3E9B572C0877A2000D9D22 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3E9B562C0877A2000D9D22 /* Map.storyboard */; };
-		8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */; };
+		8B3E9B5B2C08A679000D9D22 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B5A2C08A679000D9D22 /* UITableViewCell+Extension.swift */; };
+		8B3E9B5D2C092E01000D9D22 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B5C2C092E01000D9D22 /* Protocol.swift */; };
 		8B4C2C982C060BC500F50031 /* ReviewCell+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */; };
 		8B806A492C0095940066ACCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A482C0095940066ACCC /* AppDelegate.swift */; };
 		8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A4A2C0095940066ACCC /* SceneDelegate.swift */; };
@@ -54,7 +55,8 @@
 		8B3E9B512C087261000D9D22 /* BuyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPageViewController.swift; sourceTree = "<group>"; };
 		8B3E9B542C087792000D9D22 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8B3E9B562C0877A2000D9D22 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+Extension.swift"; sourceTree = "<group>"; };
+		8B3E9B5A2C08A679000D9D22 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		8B3E9B5C2C092E01000D9D22 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReviewCell+Extention.swift"; sourceTree = "<group>"; };
 		8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0524Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B806A482C0095940066ACCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,23 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
+		8B3E9B582C08A60A000D9D22 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B3E9B5A2C08A679000D9D22 /* UITableViewCell+Extension.swift */,
+				8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B3E9B592C08A611000D9D22 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8B3E9B5C2C092E01000D9D22 /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		8B806A3C2C0095930066ACCC = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +162,8 @@
 		8B806A472C0095940066ACCC /* SeSAC0524Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				8B3E9B592C08A611000D9D22 /* Protocol */,
+				8B3E9B582C08A60A000D9D22 /* Extension */,
 				8B3E9B532C08777D000D9D22 /* MapView */,
 				8B3E9B3F2C074079000D9D22 /* PopularCity */,
 				8BAB09C52C054B68002DA2F5 /* 0527Review */,
@@ -173,7 +194,6 @@
 			children = (
 				8B806A912C0300960066ACCC /* RestaurantTableViewController.swift */,
 				8B806A932C030A570066ACCC /* RestaurantTableViewCell.swift */,
-				8B4C2C952C05FF2000F50031 /* Restaurant+Extension.swift */,
 			);
 			path = restaurantGroup;
 			sourceTree = "<group>";
@@ -200,7 +220,6 @@
 				8BAB09C92C054BBC002DA2F5 /* ReAdTableViewCell.xib */,
 				8BAB09CE2C054BFE002DA2F5 /* ReTourTableViewCell.swift */,
 				8BAB09CF2C054BFE002DA2F5 /* ReTourTableViewCell.xib */,
-				8B4C2C972C060BC500F50031 /* ReviewCell+Extention.swift */,
 			);
 			path = 0527Review;
 			sourceTree = "<group>";
@@ -297,6 +316,7 @@
 				8B806A4B2C0095940066ACCC /* SceneDelegate.swift in Sources */,
 				8B3E9B452C0742BF000D9D22 /* PopularCityTableViewCell.swift in Sources */,
 				8BAB09BC2C047C0B002DA2F5 /* CitiesTableViewCell.swift in Sources */,
+				8B3E9B5D2C092E01000D9D22 /* Protocol.swift in Sources */,
 				8BAB09C02C048189002DA2F5 /* AdTableViewCell.swift in Sources */,
 				8B3E9B3E2C072691000D9D22 /* AdViewController.swift in Sources */,
 				8B806A922C0300960066ACCC /* RestaurantTableViewController.swift in Sources */,
@@ -309,8 +329,8 @@
 				8BAB09B92C047BE4002DA2F5 /* CitiesViewController.swift in Sources */,
 				8B806A942C030A570066ACCC /* RestaurantTableViewCell.swift in Sources */,
 				8B806A892C01A1E90066ACCC /* TravelTableViewController.swift in Sources */,
-				8B4C2C962C05FF2000F50031 /* Restaurant+Extension.swift in Sources */,
 				8B3E9B412C0741AC000D9D22 /* CityInfo.swift in Sources */,
+				8B3E9B5B2C08A679000D9D22 /* UITableViewCell+Extension.swift in Sources */,
 				8BAB09D02C054BFE002DA2F5 /* ReTourTableViewCell.swift in Sources */,
 				8B3E9B522C087261000D9D22 /* BuyPageViewController.swift in Sources */,
 			);

@@ -26,17 +26,18 @@ class CitiesTableViewCell: UITableViewCell {
     //UI
     func travelLayout() {
         
+        fontSetting(tourSpotLabel, size: 20)
+        fontSetting(descriptionLabel, size: 16)
+        fontSetting(scoreNumberLabel, size: 13)
+        fontSetting(saveNumberLabel, size: 13)
         
-        tourSpotLabel.font = .boldSystemFont(ofSize: 20)
         
-        descriptionLabel.font = .systemFont(ofSize: 16)
+        
         descriptionLabel.textColor = .darkGray
         descriptionLabel.numberOfLines = 2
         
-        scoreNumberLabel.font = .systemFont(ofSize: 13)
+
         scoreNumberLabel.textColor = .lightGray
-        
-        saveNumberLabel.font = .systemFont(ofSize: 13)
         saveNumberLabel.textColor = .lightGray
         
         spotImageView.layer.cornerRadius = 5
@@ -52,9 +53,12 @@ class CitiesTableViewCell: UITableViewCell {
         scoreNumberLabel.text = "\(data.grade!)"
         saveNumberLabel.text = "저장 \(data.save!.formatted())"
         
-        let url = URL(string: data.travel_image!)
-        spotImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "star"))
-        spotImageView.contentMode = .scaleAspectFill
+        guard let imageOfTravel = data.travel_image else { return }
+        getImage(spotImageView, data: imageOfTravel)
+        
+//        let url = URL(string: data.travel_image!)
+//        spotImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "star"))
+//        spotImageView.contentMode = .scaleAspectFill
         
         let like = data.like! ? "heart.fill" : "heart"
         let image = UIImage(systemName: like)

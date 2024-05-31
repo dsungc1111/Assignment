@@ -15,7 +15,6 @@ class PopularCityTableViewCell: UITableViewCell {
     
     @IBOutlet var cityImageView: UIImageView!
     
-    static var identifier = "PopularCityTableViewCell"
     
     
     override func awakeFromNib() {
@@ -24,7 +23,8 @@ class PopularCityTableViewCell: UITableViewCell {
     }
     
     func configureLayout() {
-        cityNameLabel.font = .boldSystemFont(ofSize: 20)
+
+        fontSetting(cityNameLabel, size: 20)
         cityNameLabel.textColor = .white
         cityNameLabel.textAlignment = .right
         
@@ -40,10 +40,7 @@ class PopularCityTableViewCell: UITableViewCell {
         cityImageView.clipsToBounds = true
         cityImageView.layer.cornerRadius = 20
         cityImageView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMaxYCorner)
-        
-//        cityImageView.layer.shadowOffset = CGSize(width: 5, height: 2)
-//        cityImageView.layer.shadowOpacity = 0.5
-//        cityImageView.layer.shadowRadius = 10
+
             
         }
     
@@ -52,8 +49,8 @@ class PopularCityTableViewCell: UITableViewCell {
         
         kindOfCitiesLabel.text = "  \(data.city_explain)"
         
-        let url = URL(string: data.city_image)
-        cityImageView.kf.setImage(with: url)
+        
+        getImage(cityImageView, data: data.city_image)
     }
     
     

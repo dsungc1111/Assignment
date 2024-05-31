@@ -14,6 +14,9 @@ class ReAdTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var adBadgeLabel: UILabel!
     
+   
+    
+    
     let colors = [UIColor.systemTeal, UIColor.blue, UIColor.yellow, UIColor.red, UIColor.brown, UIColor.green, UIColor.orange]
         
     override  func awakeFromNib() {
@@ -26,9 +29,8 @@ class ReAdTableViewCell: UITableViewCell {
     func adLayout() {
         
         
-        
+        fontSetting(titleLabel, size: 20)
         titleLabel.textAlignment = .center
-        titleLabel.font = .boldSystemFont(ofSize: 20)
         titleLabel.layer.masksToBounds = true
         titleLabel.layer.cornerRadius = 10
         titleLabel.backgroundColor = colors.randomElement()

@@ -30,18 +30,18 @@ class RestaurantTableViewCell: UITableViewCell {
         restaurantNameLabel.font = .boldSystemFont(ofSize: 15)
         restaurantNameLabel.numberOfLines = 0
         
-        fontSetting(minimumPriceLabel)
+        fontSetting(minimumPriceLabel, size: 12)
        
     }
     
     func figureCell(data: Restaurant) {
-        let url = URL(string: data.image)
-        restaurantImageView.kf.setImage(with: url)
+        
+        getImage(restaurantImageView, data: data.image)
         //가게이름
         restaurantNameLabel.text = data.name
         //전화
         phoneNumberLabel.text = data.phoneNumber
-        fontSetting(phoneNumberLabel)
+        fontSetting(phoneNumberLabel, size: 12)
         
         //최소주문
         minimumPriceLabel.text = "최소주문 \(data.price.formatted())원"
@@ -63,8 +63,7 @@ class RestaurantTableViewCell: UITableViewCell {
                        if let name: String = address.last?.name { self.adressLabel.text = "주소 : \(name)" }
                    }
                })
-        //adressLabel.font = .systemFont(ofSize: 12)
-        fontSetting(adressLabel)
+        fontSetting(adressLabel, size: 12)
     }
     
 }

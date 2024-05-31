@@ -25,9 +25,9 @@ class ReTourTableViewCell: UITableViewCell {
     
     func tourLayout() {
         
-        fontSetting(titleLabel, 20)
-        fontSetting(descriptionLabel, 15)
-        fontSetting(scoreLabel, 12)
+        fontSetting(titleLabel, size: 20)
+        fontSetting(descriptionLabel, size: 15)
+        fontSetting(scoreLabel, size: 12)
         
         
         descriptionLabel.numberOfLines = 0
@@ -46,8 +46,9 @@ class ReTourTableViewCell: UITableViewCell {
         
         scoreLabel.text = data.evaluation
         
-        let url = URL(string: data.travel_image!)
-        tourImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "star"))
+        
+        getImage(tourImageView, data: data.travel_image ?? "star")
+      
         
         
         let like = data.like! ? "star.fill" : "star"

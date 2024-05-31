@@ -13,7 +13,7 @@ class AdViewController: UIViewController {
     
     @IBOutlet var adTextLaebl: UILabel!
     
-    var text = ""
+    var dataAd: Travel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,9 @@ class AdViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = .black
         
+        guard let adScreen = dataAd?.title else { return }
         
+        adTextLaebl.text = adScreen
   
     }
     

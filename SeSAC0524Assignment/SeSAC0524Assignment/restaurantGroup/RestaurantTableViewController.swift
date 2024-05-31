@@ -274,7 +274,7 @@ class RestaurantTableViewController: UITableViewController {
     
     // 데이터
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell") as! RestaurantTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewController.identifier) as? RestaurantTableViewCell else { return RestaurantTableViewCell() }
       
         
         
@@ -342,17 +342,20 @@ class RestaurantTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
+
     
     @IBAction func keyboardDissmiss(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
    
+}
+
+
+extension RestaurantTableViewController: IdentifierProtocol {
+    static var identifier: String {
+        return String(describing: RestaurantTableViewCell.self)
+    }
+    
+    
 }

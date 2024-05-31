@@ -9,7 +9,7 @@ import UIKit
 
 extension UITableViewCell {
     
-    func fontSetting(_ label: UILabel, _ size: Int) {
+    func fontSetting(_ label: UILabel, size: Int) {
         if size == 20 {
             label.font = .boldSystemFont(ofSize: CGFloat(size))
         } else {

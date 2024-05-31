@@ -45,14 +45,17 @@ class TravelTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        magezineTitle()
+        tableView.rowHeight = 420
+    }
+
+    
+    func magezineTitle() {
         titleLabel.text = "Travelog"
         titleLabel.textAlignment = .center
         titleLabel.font = .boldSystemFont(ofSize: 20)
-        tableView.rowHeight = 420
-        
-       
     }
-
+    
     
     //행
     //데이터
@@ -61,62 +64,20 @@ class TravelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier) as? TravelTableViewCell else { return UITableViewCell() }
         
         let data = travelInfo[indexPath.row]
     
-      
-        let url = URL(string: data.photo_image)
-        cell.travelImageView.kf.setImage(with: url)
-        cell.travelImageView.contentMode = .scaleAspectFill
-        cell.travelImageView.layer.cornerRadius = 10
-        
-        
+        cell.configureLayout()
 
         
-        cell.titleLabel.text = data.title
-        cell.titleLabel.font = .boldSystemFont(ofSize: 18)
-        if cell.titleLabel.text!.count >= 25 {
-            cell.titleLabel.font = .systemFont(ofSize: 16)
-        }
-        cell.titleLabel.numberOfLines = 0
-        cell.subtitleLabel.text = data.subtitle
-        cell.subtitleLabel.font = .systemFont(ofSize: 14)
-        cell.subtitleLabel.textColor = .lightGray
-        
-        // date형식 > string 변환하는 법
-//        let datestr = Date()
-//        print(datestr)
-//        let dateformatter = DateFormatter()
-//        dateformatter.dateFormat = "yy년 MM월 dd일"
-//        dateformatter.locale = Locale(identifier: "ko-KR")
-//        
-//        let convertDate = dateformatter.string(from: datestr)
-//        cell.dateLabel.text = convertDate
-        
-        
-        // string > date형식
-        let datestr = data.date
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyMMdd"
-        dateformatter.locale = Locale(identifier: "ko-KR")
-        
-        let convertDate = dateformatter.date(from: datestr)
-
-        let myDate = DateFormatter()
-        myDate.dateFormat = "yyyy년 MM월 dd일"
-        myDate.locale = Locale(identifier:"ko_KR")
-        let convertStr = myDate.string(from: convertDate!)
-
-        
-        cell.dateLabel.text = convertStr
-        cell.dateLabel.font = .systemFont(ofSize: 12)
-        cell.dateLabel.textColor = .lightGray
+        cell.configureCell(data: data)
+        cell.changeDateFormat(data: data)
+       
         
         return cell
     }
-    
-    
     
     
     
