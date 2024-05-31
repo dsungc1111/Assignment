@@ -14,6 +14,12 @@ class ReviewViewController: UIViewController {
     @IBOutlet var mainTableView: UITableView!
     
     var guideList = TravelInfo().travel
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +54,7 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
         let data = guideList[indexPath.row]
         
         if data.ad == true {
-            guard let cell2 = tableView.dequeueReusableCell(withIdentifier: ReviewViewController.identifier, for: indexPath) as? ReAdTableViewCell else { return ReAdTableViewCell() }
+            guard let cell2 = tableView.dequeueReusableCell(withIdentifier: ReAdTableViewCell.identifier, for: indexPath) as? ReAdTableViewCell else { return ReAdTableViewCell() }
             cell2.configureCell(data: data)
             tableView.rowHeight = 120
             return cell2
@@ -69,7 +75,7 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
         
         if data.ad {
             let sb = UIStoryboard(name: "Detail", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "AdViewController") as? AdViewController else {return}
+            guard let vc = sb.instantiateViewController(withIdentifier: AdViewController.identifier) as? AdViewController else {return}
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             
@@ -78,7 +84,7 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
             present(nav, animated: true)
         } else {
             let sb = UIStoryboard(name: "Detail", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+            guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
 
            
             vc.data = guideList[indexPath.row]
@@ -91,11 +97,6 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension ReviewViewController: IdentifierProtocol {
+
     
-    static var identifier: String {
-        return String(describing: ReAdTableViewCell.self)
-    }
-    
-    
-}
+

@@ -16,9 +16,4 @@ extension UITableViewCell {
             label.font = .systemFont(ofSize: CGFloat(size))
         }
     }
-    
-    
-    
-    
-    
 }

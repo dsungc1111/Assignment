@@ -43,6 +43,10 @@ class TravelTableViewController: UITableViewController {
     var travelInfo = MagazineInfo().magazine
     
     
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         magezineTitle()

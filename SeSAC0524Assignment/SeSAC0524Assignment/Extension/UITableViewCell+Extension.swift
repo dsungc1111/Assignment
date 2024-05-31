@@ -16,10 +16,4 @@ extension UITableViewCell {
         image.kf.setImage(with: url, placeholder: UIImage(systemName: "star"))
         image.contentMode = .scaleAspectFill
     }
-    
-    static var identifier: String {
-        return String(describing: self)
-    }
-    
-    
 }

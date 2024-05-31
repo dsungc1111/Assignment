@@ -30,8 +30,8 @@ class PopularCityViewController: UIViewController {
         cityTableView.delegate = self
         cityTableView.dataSource = self
         
-        let xib = UINib(nibName: PopularCityViewController.identifier, bundle: nil)
-        cityTableView.register(xib, forCellReuseIdentifier: PopularCityViewController.identifier)
+        let xib = UINib(nibName: PopularCityTableViewCell.identifier, bundle: nil)
+        cityTableView.register(xib, forCellReuseIdentifier: PopularCityTableViewCell.identifier)
         
         
         
@@ -79,7 +79,7 @@ extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityViewController.identifier, for: indexPath) as? PopularCityTableViewCell else { return PopularCityTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityTableViewCell.identifier, for: indexPath) as? PopularCityTableViewCell else { return PopularCityTableViewCell() }
         
         let data = list[indexPath.row]
         
@@ -137,9 +137,6 @@ extension PopularCityViewController: UISearchBarDelegate {
 }
 
 
-extension PopularCityViewController: IdentifierProtocol {
-    static var identifier: String {
-        return String(describing: PopularCityTableViewCell.self)
-    }
+
     
-}
+

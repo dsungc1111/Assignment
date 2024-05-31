@@ -239,13 +239,10 @@ class RestaurantTableViewController: UITableViewController {
     }
      //즐겨찾기 버튼
     @objc func likeButtonTapped(sender: UIButton) {
-       // print("befor toggle = ", favoriteList[sender.tag].like)
+        
         favoriteList[sender.tag].like.toggle()
-       // print("after toggle = ", favoriteList[sender.tag].like)
         UserDefaults.standard.setValue(favoriteList[sender.tag].like, forKey: "\(sender.tag)")
         restaurantList[sender.tag].like = favoriteList[sender.tag].like
-       // print(sender.tag, favoriteList[sender.tag].like)
-        print(restaurantList[sender.tag].like)
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
     }
     // 서치버튼
@@ -274,7 +271,7 @@ class RestaurantTableViewController: UITableViewController {
     
     // 데이터
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewController.identifier) as? RestaurantTableViewCell else { return RestaurantTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier) as? RestaurantTableViewCell else { return RestaurantTableViewCell() }
       
         
         
@@ -282,9 +279,9 @@ class RestaurantTableViewController: UITableViewController {
 
       
         var data = favoriteList[indexPath.row]
-        //print(data.like)
+       
         data.like = UserDefaults.standard.bool(forKey: "\(indexPath.row)")
-       // print(data.like)
+       
         
         // ⭐️⭐️⭐️⭐️⭐️
         restaurantList[indexPath.row].like = data.like
@@ -352,10 +349,3 @@ class RestaurantTableViewController: UITableViewController {
 }
 
 
-extension RestaurantTableViewController: IdentifierProtocol {
-    static var identifier: String {
-        return String(describing: RestaurantTableViewCell.self)
-    }
-    
-    
-}

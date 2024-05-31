@@ -21,11 +21,11 @@ class CitiesViewController: UIViewController {
         travelInfoTableView.delegate = self
         travelInfoTableView.dataSource = self
         
-        let adXib = UINib(nibName: "AdTableViewCell", bundle: nil)
-        travelInfoTableView.register(adXib, forCellReuseIdentifier: "AdTableViewCell")
+        let adXib = UINib(nibName: AdTableViewCell.identifier, bundle: nil)
+        travelInfoTableView.register(adXib, forCellReuseIdentifier: AdTableViewCell.identifier)
         
-        let tourXib = UINib(nibName: "CitiesTableViewCell", bundle: nil)
-        travelInfoTableView.register(tourXib, forCellReuseIdentifier: "CitiesTableViewCell")
+        let tourXib = UINib(nibName: CitiesTableViewCell.identifier, bundle: nil)
+        travelInfoTableView.register(tourXib, forCellReuseIdentifier: CitiesTableViewCell.identifier)
 
     }
 
@@ -44,13 +44,13 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         if data.ad == true {
-            guard let cell1 = travelInfoTableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as? AdTableViewCell else { return AdTableViewCell() }
+            guard let cell1 = travelInfoTableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as? AdTableViewCell else { return AdTableViewCell() }
             
             cell1.configureAd(data: data)
             tableView.rowHeight = 120
             return cell1
         } else {
-            guard let cell2 = travelInfoTableView.dequeueReusableCell(withIdentifier: "CitiesTableViewCell", for: indexPath) as? CitiesTableViewCell else { return CitiesTableViewCell() }
+            guard let cell2 = travelInfoTableView.dequeueReusableCell(withIdentifier: CitiesTableViewCell.identifier, for: indexPath) as? CitiesTableViewCell else { return CitiesTableViewCell() }
             tableView.rowHeight = 180
             
             

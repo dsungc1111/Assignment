@@ -13,6 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var mapView: MKMapView!
     
     let foodList = RestaurantList().restaurantArray
+    
     let picker = UIPickerView()
     var blankList: [Restaurant] = []
     

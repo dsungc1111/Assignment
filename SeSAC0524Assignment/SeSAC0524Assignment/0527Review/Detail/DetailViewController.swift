@@ -72,7 +72,7 @@ class DetailViewController: UIViewController {
     @IBAction func buyButtonTapped(_ sender: UIButton) {
         
         let sb = UIStoryboard(name: "Detail", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? BuyPageViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: BuyPageViewController.identifier) as? BuyPageViewController else { return }
         let nav = UINavigationController(rootViewController: vc)
         
         present(nav, animated: true)
@@ -84,10 +84,3 @@ class DetailViewController: UIViewController {
 
 }
 
-extension DetailViewController: IdentifierProtocol {
-    static var identifier: String {
-        return String(describing: BuyPageViewController.self)
-    }
-    
-    
-}
