@@ -50,7 +50,7 @@ class TravelTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         magezineTitle()
-        tableView.rowHeight = 420
+
     }
 
     
@@ -83,7 +83,46 @@ class TravelTableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 420
+    }
     
   
 }
+
+
+extension String {
+  // MARK: - String -> Date
+    func toDate(_ dateFormat: String = "yyMMdd") -> Date? {
+        
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "ko_KR")
+    dateFormatter.timeZone = TimeZone(identifier: "UTC")
+    dateFormatter.dateFormat = dateFormat
+    
+    if let date = dateFormatter.date(from: self) {
+      return date
+    }
+    return nil
+  }
+    
+    
+}
+
+extension Date {
+
+    /**
+     # formatted
+     - Parameters:
+        - format: 변형할 DateFormat
+     - Note: DateFormat으로 변형한 String 반환
+    */
+    func formatted(_ format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
+        
+        return formatter.string(from: self)
+    }
+}
+

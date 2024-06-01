@@ -227,7 +227,7 @@ class RestaurantTableViewController: UITableViewController {
         pageTitleLabel.textAlignment = .center
         pageTitleLabel.text = "배달ZoonG"
         searchTextField.placeholder = "검색하세요."
-        tableView.rowHeight = 200
+       
         
         for i in 0...buttonList.count-1 {
             buttonList[i].setTitle(categoryList[i], for: .normal)
@@ -236,7 +236,7 @@ class RestaurantTableViewController: UITableViewController {
         }
         
         for i in 0...restaurantList.count-1 {
-            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(restaurantList[i].name)")
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: (restaurantList[i].name))
         }
         favoriteList = restaurantList
        
@@ -288,7 +288,6 @@ class RestaurantTableViewController: UITableViewController {
       
         let data = favoriteList[indexPath.row]
        
-        cell.figureLayout()
         cell.figureCell(data: data)
         
         
@@ -300,6 +299,10 @@ class RestaurantTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     
         
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
@@ -308,7 +311,7 @@ class RestaurantTableViewController: UITableViewController {
         guard let title = buttonList[sender.tag].currentTitle else { return }
         
         for i in 0...restaurantList.count-1 {
-            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(restaurantList[i].name)")
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: restaurantList[i].name)
         }
         
         for item in restaurantList {

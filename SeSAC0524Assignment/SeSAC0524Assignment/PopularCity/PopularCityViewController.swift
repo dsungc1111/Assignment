@@ -26,16 +26,11 @@ class PopularCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextBar.delegate = self
-        cityTableView.rowHeight = 190
         cityTableView.delegate = self
         cityTableView.dataSource = self
         
         let xib = UINib(nibName: PopularCityTableViewCell.identifier, bundle: nil)
         cityTableView.register(xib, forCellReuseIdentifier: PopularCityTableViewCell.identifier)
-        
-        
-        
-        
     }
     
     
@@ -73,6 +68,11 @@ class PopularCityViewController: UIViewController {
 }
 extension PopularCityViewController: UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 190
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count

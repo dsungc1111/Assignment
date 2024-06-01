@@ -26,10 +26,10 @@ class ReviewViewController: UIViewController {
         mainTableView.dataSource = self
         mainTableView.delegate = self
         
-        let adadXib = UINib(nibName: "ReAdTableViewCell", bundle: nil)
-        mainTableView.register(adadXib, forCellReuseIdentifier: "ReAdTableViewCell")
-        let tourSpotXib = UINib(nibName: "ReTourTableViewCell", bundle: nil)
-        mainTableView.register(tourSpotXib, forCellReuseIdentifier: "ReTourTableViewCell")
+        let adadXib = UINib(nibName: ReAdTableViewCell.identifier, bundle: nil)
+        mainTableView.register(adadXib, forCellReuseIdentifier: ReAdTableViewCell.identifier)
+        let tourSpotXib = UINib(nibName: ReTourTableViewCell.identifier, bundle: nil)
+        mainTableView.register(tourSpotXib, forCellReuseIdentifier: ReTourTableViewCell.identifier)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
@@ -53,21 +53,32 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
         
         let data = guideList[indexPath.row]
         
-        if data.ad == true {
-            guard let cell2 = tableView.dequeueReusableCell(withIdentifier: ReAdTableViewCell.identifier, for: indexPath) as? ReAdTableViewCell else { return ReAdTableViewCell() }
-            cell2.configureCell(data: data)
-            tableView.rowHeight = 120
-            return cell2
+        if data.ad {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ReAdTableViewCell.identifier, for: indexPath) as? ReAdTableViewCell else { return ReAdTableViewCell() }
+            cell.configureCell(data: data)
+           
+            return cell
         } else {
-            guard let cell1 = tableView.dequeueReusableCell(withIdentifier: ReTourTableViewCell.identifier, for: indexPath) as? ReTourTableViewCell else { return ReTourTableViewCell() }
-            tableView.rowHeight = 180
-            cell1.configureCell(data: data)
-            return cell1
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ReTourTableViewCell.identifier, for: indexPath) as? ReTourTableViewCell else { return ReTourTableViewCell() }
+           
+            cell.configureCell(data: data)
+            return cell
         }
-        
-        
-        
+
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let data = guideList[indexPath.row]
+        
+        if data.ad {
+            return 120
+        } else {
+            return 180
+        }
+    }
+    
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

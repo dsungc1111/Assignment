@@ -23,6 +23,13 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet var likeButton: UIButton!
     
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        figureLayout()
+    }
+    
+    
     func figureLayout() {
         
         restaurantImageView.contentMode = .scaleAspectFill

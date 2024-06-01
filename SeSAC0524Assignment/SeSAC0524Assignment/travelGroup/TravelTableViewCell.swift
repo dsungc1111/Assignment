@@ -45,23 +45,32 @@ class TravelTableViewCell: UITableViewCell {
     
     func changeDateFormat(data: Magazine) {
         // string > date형식
-        let datestr = data.date
-        let dateformatter = DateFormatter()
-        dateformatter.dateFormat = "yyMMdd"
-        dateformatter.locale = Locale(identifier: "ko-KR")
+//        let datestr = data.date
+//        let dateformatter = DateFormatter()
+//        dateformatter.dateFormat = "yyMMdd"
+//        dateformatter.locale = Locale(identifier: "ko-KR")
+//        
+       // data.date.toDate()
         
-        let convertDate = dateformatter.date(from: datestr)
-
-        let myDate = DateFormatter()
-        myDate.dateFormat = "yyyy년 MM월 dd일"
-        myDate.locale = Locale(identifier:"ko_KR")
-        let convertStr = myDate.string(from: convertDate!)
-
         
-        dateLabel.text = convertStr
+        
+        // date를 스트링
+//        
+//        let convertDate =   data.date.toDate()
+////
+//        let myDate = DateFormatter()
+//        myDate.dateFormat = "yyyy년 MM월 dd일"
+//        myDate.locale = Locale(identifier:"ko_KR")
+//        let convertStr = myDate.string(from: convertDate!)
+
+      //  data.date.toDate()
+       // print((data.date.toDate())!.toString("yyyy년 MM월 dd일"))
+      
+        dateLabel.text = (data.date.toDate())?.formatted("yyyy년 MM월 dd일")
         dateLabel.font = .systemFont(ofSize: 12)
         dateLabel.textColor = .lightGray
     }
     
     
 }
+

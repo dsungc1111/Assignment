@@ -16,4 +16,11 @@ class ShoppingTableViewCell: UITableViewCell {
     
     @IBOutlet var todoLabel: UILabel!
     
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
+    
 }

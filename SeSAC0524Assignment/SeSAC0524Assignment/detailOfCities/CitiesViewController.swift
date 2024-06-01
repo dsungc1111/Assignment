@@ -17,7 +17,7 @@ class CitiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        travelInfoTableView.rowHeight = 120
+       
         travelInfoTableView.delegate = self
         travelInfoTableView.dataSource = self
         
@@ -43,19 +43,31 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
         let data = list[indexPath.row]
         
         
-        if data.ad == true {
+        if data.ad  {
             guard let cell1 = travelInfoTableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as? AdTableViewCell else { return AdTableViewCell() }
             
             cell1.configureAd(data: data)
-            tableView.rowHeight = 120
+            
             return cell1
         } else {
             guard let cell2 = travelInfoTableView.dequeueReusableCell(withIdentifier: CitiesTableViewCell.identifier, for: indexPath) as? CitiesTableViewCell else { return CitiesTableViewCell() }
-            tableView.rowHeight = 180
+            
             
             
             cell2.configureCell(data: data)
             return cell2
         }
     }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let data = list[indexPath.row]
+        
+        if data.ad {
+            return 120
+        } else {
+            return 180
+        }
+    }
+    
 }
