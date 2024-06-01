@@ -218,7 +218,7 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurantList = RestaurantList().restaurantArray
     var favoriteList = RestaurantList().restaurantArray
-    var dd: [Restaurant] = []
+    var basketList: [Restaurant] = []
     var categoryList = ["한식", "일식", "카페", "경양식", "중식", "분식", "양식", "경양식"]
     
     
@@ -233,17 +233,25 @@ class RestaurantTableViewController: UITableViewController {
             buttonList[i].setTitle(categoryList[i], for: .normal)
             buttonList[i].titleLabel?.font = .systemFont(ofSize: 12)
             buttonList[i].titleLabel?.textColor = .black
-            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(i)")
         }
+        
+        for i in 0...restaurantList.count-1 {
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(restaurantList[i].name)")
+        }
+        favoriteList = restaurantList
+       
         
     }
      //즐겨찾기 버튼
     @objc func likeButtonTapped(sender: UIButton) {
         
         favoriteList[sender.tag].like.toggle()
-        UserDefaults.standard.setValue(favoriteList[sender.tag].like, forKey: "\(sender.tag)")
-        restaurantList[sender.tag].like = favoriteList[sender.tag].like
+        UserDefaults.standard.setValue(favoriteList[sender.tag].like, forKey: "\(favoriteList[sender.tag].name)")
+
         tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
+        
+      //  tableView.reloadData()
+        
     }
     // 서치버튼
     @objc func searchButtonTapped() {
@@ -278,16 +286,11 @@ class RestaurantTableViewController: UITableViewController {
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
 
       
-        var data = favoriteList[indexPath.row]
+        let data = favoriteList[indexPath.row]
        
-        data.like = UserDefaults.standard.bool(forKey: "\(indexPath.row)")
-       
-        
-        // ⭐️⭐️⭐️⭐️⭐️
-        restaurantList[indexPath.row].like = data.like
-        
         cell.figureLayout()
         cell.figureCell(data: data)
+        
         
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
@@ -300,19 +303,20 @@ class RestaurantTableViewController: UITableViewController {
     
         
     @IBAction func categoryButtonTapped(_ sender: UIButton) {
-        var count = 0
         favoriteList.removeAll()
         
-        guard let title = buttonList[sender.tag].currentTitle else {
-            return
-        }
+        guard let title = buttonList[sender.tag].currentTitle else { return }
+        
         for i in 0...restaurantList.count-1 {
-            if restaurantList[i].category == title {
-                favoriteList.insert(restaurantList[i], at: count)
-                      count += 1
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(restaurantList[i].name)")
+        }
+        
+        for item in restaurantList {
+            if item.category == title {
+                favoriteList.append(item)
             }
         }
-        if count == 0 {favoriteList = restaurantList}
+        
         tableView.reloadData()
     }
     
@@ -321,21 +325,50 @@ class RestaurantTableViewController: UITableViewController {
     
     
     @IBAction func likeListButtonTapped(_ sender: UIButton) {
-        // favoriteList > 화면에 보여지는 리스트
-        // restaurantList > 전체 리스트
-        // 이전 코드에서 favoriteList의 like만 교체 이 값을
-        // restauranList에 넣어주고 중식 카테고리에서 즐겨찾기 버튼을 눌러도 한식카테고리의 즐겨찾기가 나오게
-//        favoriteList.removeAll()
-//        var count = 0
-//
-//
-//        for i in 0...restaurantList.count-1 {
-//            if UserDefaults.standard.bool(forKey: "\(i)") {
-//                favoriteList.append(restaurantList[i])
-//            }
-//        }
-//        
-//        tableView.reloadData()
+        var count = 0
+        basketList = []
+        for i in 0...restaurantList.count-1 {
+            restaurantList[i].like = UserDefaults.standard.bool(forKey: "\(restaurantList[i].name)")
+            if restaurantList[i].like { count += 1}
+        }
+        
+        if count == 0 {
+            let alert = UIAlertController(title: "즐겨찾기", message: "즐겨찾기 항목이 없습니다", preferredStyle: .actionSheet)
+           
+            let okButton = UIAlertAction(title: "OK", style: .default)
+            let deleteButton = UIAlertAction(title: "Back", style: .destructive)
+           
+            alert.addAction(okButton)
+            alert.addAction(deleteButton)
+            
+            present(alert, animated: true)
+        } else {
+            if basketList.isEmpty {
+                for item in restaurantList {
+                    if item.like {
+                        basketList.append(item)
+                    }
+                }
+            } else {
+                
+                for i in 0...basketList.count {
+                    for item in restaurantList {
+                        if item.name != basketList[i].name {
+                            if item.like {
+                                basketList.append(item)
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+        
+        
+        
+        favoriteList = basketList
+        tableView.reloadData()
         
     }
     
