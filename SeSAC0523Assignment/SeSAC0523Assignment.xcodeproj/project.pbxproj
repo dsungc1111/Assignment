@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3E9BA02C0B03A1000D9D22 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E9B9F2C0B03A1000D9D22 /* Protocol.swift */; };
 		8B806A5D2C009B740066ACCC /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B806A5C2C009B740066ACCC /* ShoppingTableViewCell.swift */; };
 		8BBEF8A62BFF569800848AC6 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEF8A52BFF569800848AC6 /* ShoppingTableViewController.swift */; };
 		8BECD7132BFF25B500B214E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BECD7122BFF25B500B214E0 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3E9B9F2C0B03A1000D9D22 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		8B806A5C2C009B740066ACCC /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		8BBEF8A52BFF569800848AC6 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
 		8BECD70F2BFF25B500B214E0 /* SeSAC0523Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC0523Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				8BECD71D2BFF25B600B214E0 /* LaunchScreen.storyboard */,
 				8BECD7202BFF25B600B214E0 /* Info.plist */,
 				8BECD7262BFF377800B214E0 /* SettingTableViewController.swift */,
+				8B3E9B9F2C0B03A1000D9D22 /* Protocol.swift */,
 			);
 			path = SeSAC0523Assignment;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				8BECD7272BFF377800B214E0 /* SettingTableViewController.swift in Sources */,
 				8B806A5D2C009B740066ACCC /* ShoppingTableViewCell.swift in Sources */,
 				8BBEF8A62BFF569800848AC6 /* ShoppingTableViewController.swift in Sources */,
+				8B3E9BA02C0B03A1000D9D22 /* Protocol.swift in Sources */,
 				8BECD7172BFF25B500B214E0 /* ViewController.swift in Sources */,
 				8BECD7132BFF25B500B214E0 /* AppDelegate.swift in Sources */,
 				8BECD7152BFF25B500B214E0 /* SceneDelegate.swift in Sources */,

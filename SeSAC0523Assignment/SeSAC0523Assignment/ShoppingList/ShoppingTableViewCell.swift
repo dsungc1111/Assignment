@@ -21,6 +21,22 @@ class ShoppingTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    func configureCell(data: Shopping) {
+        
+        let check = data.check ? "checkmark.square.fill" : "checkmark.square"
+        let imageCheck = UIImage(systemName: check)
+        checkButton.setImage(imageCheck, for: .normal)
+        
+        
+        todoLabel.text = data.todo
+        todoLabel.textAlignment = .left
+        
+        
+        let star = data.bookmark ? "star.fill" : "star"
+        let image = UIImage(systemName: star)
+        bookmarkButton.setImage(image, for: .normal)
+        
+    }
     
     
 }
