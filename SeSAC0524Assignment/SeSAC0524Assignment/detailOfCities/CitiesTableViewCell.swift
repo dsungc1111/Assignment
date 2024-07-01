@@ -52,6 +52,7 @@ class CitiesTableViewCell: UITableViewCell {
         descriptionLabel.text = data.description
         scoreNumberLabel.text = "\(data.grade!)"
         saveNumberLabel.text = "저장 \(data.save!.formatted())"
+        // DateFormatter() --> Expansive 인스턴스 생성을 최소화 하자!
         
         guard let imageOfTravel = data.travel_image else { return }
         getImage(spotImageView, data: imageOfTravel)

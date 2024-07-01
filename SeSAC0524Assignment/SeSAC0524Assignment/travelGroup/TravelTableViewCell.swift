@@ -66,7 +66,7 @@ class TravelTableViewCell: UITableViewCell {
       //  data.date.toDate()
        // print((data.date.toDate())!.toString("yyyy년 MM월 dd일"))
       
-        dateLabel.text = (data.date.toDate())?.formatted("yyyy년 MM월 dd일")
+       // dateLabel.text = (data.date.toDate())?.formatted("yyyy년 MM월 dd일")
         dateLabel.font = .systemFont(ofSize: 12)
         dateLabel.textColor = .lightGray
     }

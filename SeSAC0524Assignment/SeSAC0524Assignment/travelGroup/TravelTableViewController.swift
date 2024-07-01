@@ -43,7 +43,8 @@ class TravelTableViewController: UITableViewController {
     var travelInfo = MagazineInfo().magazine
     
     
-   
+    
+
     
     
     
@@ -80,8 +81,41 @@ class TravelTableViewController: UITableViewController {
         cell.changeDateFormat(data: data)
        
         
+        cell.dateLabel.text = "\(changeDateSet(data: data.date))"
+        
+        
         return cell
     }
+    
+    
+    
+    
+    func changeDateSet(data: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyMMdd"
+        let convertDate = dateFormatter.date(from: data)
+        print(convertDate ?? "제발")
+        dateFormatter.dateFormat = "yy/MM/dd"
+        let dateStirng = dateFormatter.string(from: convertDate!)
+        
+        return dateStirng
+        
+    }
+
+//    func changeDateSet(data: Any) -> String {
+//        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = Locale(identifier: "ko_KR")
+//        dateFormatter.dateFormat = "yyMMdd"
+//        let convertDate = dateFormatter.date(from: data as! String)
+//        print(convertDate ?? "제발")
+//        dateFormatter.dateFormat = "yy/MM/dd"
+//        let dateStirng = dateFormatter.string(from: convertDate!)
+//        return dateStirng
+//
+//    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 420
@@ -91,38 +125,36 @@ class TravelTableViewController: UITableViewController {
 }
 
 
-extension String {
-  // MARK: - String -> Date
-    func toDate(_ dateFormat: String = "yyMMdd") -> Date? {
-        
-    let dateFormatter = DateFormatter()
-    dateFormatter.locale = Locale(identifier: "ko_KR")
-    dateFormatter.timeZone = TimeZone(identifier: "UTC")
-    dateFormatter.dateFormat = dateFormat
-    
-    if let date = dateFormatter.date(from: self) {
-      return date
-    }
-    return nil
-  }
-    
-    
-}
-
-extension Date {
-
-    /**
-     # formatted
-     - Parameters:
-        - format: 변형할 DateFormat
-     - Note: DateFormat으로 변형한 String 반환
-    */
-    func formatted(_ format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
-        
-        return formatter.string(from: self)
-    }
-}
+//extension String {
+//  // MARK: - String -> Date
+//    func toDate(_ dateFormat: String = "yyMMdd") -> Date? {
+//        
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.locale = Locale(identifier: "ko_KR")
+//    dateFormatter.timeZone = TimeZone(identifier: "UTC")
+//    dateFormatter.dateFormat = dateFormat
+//    
+//    if let date = dateFormatter.date(from: self) {
+//      return date
+//    }
+//    return nil
+//  }
+//}
+//
+//extension Date {
+//
+//    /**
+//     # formatted
+//     - Parameters:
+//        - format: 변형할 DateFormat
+//     - Note: DateFormat으로 변형한 String 반환
+//    */
+//    func formatted(_ format: String) -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = format
+//        formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
+//        
+//        return formatter.string(from: self)
+//    }
+//}
 

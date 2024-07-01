@@ -37,11 +37,12 @@ class ShoppingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    
+       // things.append(contentsOf: UserDefaults.standard.array(forKey: "things") as? [Shopping] ?? [Shopping]())
+       
         topCategorySet()
         searchBoxTextFieldSet()
         addButtonSet()
+        
         for i in 0...things.count-1 {
             things[i].check = UserDefaults.standard.bool(forKey: things[i].todo + "check")
             things[i].bookmark = UserDefaults.standard.bool(forKey: things[i].todo + "bookmark")
@@ -127,7 +128,7 @@ class ShoppingTableViewController: UITableViewController {
 
         let addThings = Shopping(check: false, todo: searchBoxTextField.text!, bookmark: false)
         things.append(addThings)
-
+        UserDefaults.standard.setValue(things, forKey: "things")
         searchBoxTextField.text = ""
         tableView.reloadData()
     }

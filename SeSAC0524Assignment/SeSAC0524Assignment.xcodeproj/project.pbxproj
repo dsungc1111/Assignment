@@ -36,7 +36,6 @@
 		8BAB09BD2C047C0B002DA2F5 /* CitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB09BB2C047C0B002DA2F5 /* CitiesTableViewCell.xib */; };
 		8BAB09C02C048189002DA2F5 /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB09BE2C048189002DA2F5 /* AdTableViewCell.swift */; };
 		8BAB09C12C048189002DA2F5 /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB09BF2C048189002DA2F5 /* AdTableViewCell.xib */; };
-		8BAB09C42C0498DD002DA2F5 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 8BAB09C32C0498DD002DA2F5 /* Cosmos */; };
 		8BAB09C72C054B8B002DA2F5 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB09C62C054B8B002DA2F5 /* ReviewViewController.swift */; };
 		8BAB09CA2C054BBC002DA2F5 /* ReAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB09C82C054BBC002DA2F5 /* ReAdTableViewCell.swift */; };
 		8BAB09CB2C054BBC002DA2F5 /* ReAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB09C92C054BBC002DA2F5 /* ReAdTableViewCell.xib */; };
@@ -87,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BAB09C42C0498DD002DA2F5 /* Cosmos in Frameworks */,
 				8B806A8E2C01F6F50066ACCC /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,7 +240,6 @@
 			name = SeSAC0524Assignment;
 			packageProductDependencies = (
 				8B806A8D2C01F6F50066ACCC /* Kingfisher */,
-				8BAB09C32C0498DD002DA2F5 /* Cosmos */,
 			);
 			productName = SeSAC0524Assignment;
 			productReference = 8B806A452C0095940066ACCC /* SeSAC0524Assignment.app */;
@@ -274,7 +271,6 @@
 			mainGroup = 8B806A3C2C0095930066ACCC;
 			packageReferences = (
 				8B806A8C2C01F6F50066ACCC /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				8BAB09C22C0498DD002DA2F5 /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 8B806A462C0095940066ACCC /* Products */;
 			projectDirPath = "";
@@ -567,16 +563,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 7.11.0;
-			};
-		};
-		8BAB09C22C0498DD002DA2F5 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/Cosmos.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 25.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -586,11 +574,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B806A8C2C01F6F50066ACCC /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		8BAB09C32C0498DD002DA2F5 /* Cosmos */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8BAB09C22C0498DD002DA2F5 /* XCRemoteSwiftPackageReference "Cosmos" */;
-			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
