@@ -58,7 +58,7 @@ class NasaViewController: UIViewController {
     }
     
     func callRequest() {
-        print(Nasa.photo)
+        buffer = Data()
         let request = URLRequest(url: Nasa.photo)
         session = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
         session.dataTask(with: request).resume()
@@ -105,6 +105,7 @@ extension NasaViewController: URLSessionDataDelegate {
         }
     }
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        requestButton.isEnabled = false
         buffer.append(data)
     }
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: (any Error)?) {
@@ -118,6 +119,7 @@ extension NasaViewController: URLSessionDataDelegate {
             
             let image = UIImage(data: buffer)
             nasaImageView.image = image
+            requestButton.isEnabled = true
         }
     }
 }
