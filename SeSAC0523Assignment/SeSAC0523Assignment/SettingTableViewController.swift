@@ -6,59 +6,71 @@
 //
 
 import UIKit
+import SnapKit
 
-class SettingTableViewController: UITableViewController {
+
+class SettingViewController: UIViewController {
 
     let sectionName = ["전체 설정", "개인 설정", "기타"]
     let settingMenu = [["공지사항", "실험실", "버전 정보"],["개인/보안", "알림", "채팅", "멀티프로필"] ,["고객센터/도움말"]]
+    var dataSource: UICollectionViewDiffableDataSource<String,String>!
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+    func createLayout() -> UICollectionViewLayout {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        configuration.backgroundColor = .white
+        configuration.showsSeparators = true
+        
+        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        return layout
+    }
     
-    
+    private func configureDataSource() {
+        var registration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
+        registration = UICollectionView.CellRegistration { cell, indexPath, itemIdentifier in
+            // collectionviewCell's system cell
+            var content = UIListContentConfiguration.valueCell()
+            content.text = itemIdentifier
+            content.textProperties.font = .boldSystemFont(ofSize: 20)
+            cell.contentConfiguration = content
+            
+            var backgroundConfig = UIBackgroundConfiguration.listGroupedCell()
+            backgroundConfig.backgroundColor = .clear
+            backgroundConfig.cornerRadius = 10
+            cell.backgroundConfiguration = backgroundConfig
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: itemIdentifier )
+            
+            return cell
+        })
+      
+        
+     
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-
-    // 1. 섹션 개수 설정
-    // 2. 행 개수 설정
-    // 3. 데이터 표현
-    
-    // 1. 섹션 개수
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionName.count
-    }
-    // 2.  행개수
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingMenu[section].count
-    }
-    
-    // 3. 데이터 표현
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dsungC", for: indexPath)
-        cell.textLabel?.text = settingMenu[indexPath.section][indexPath.row]
-        cell.textLabel?.font = .systemFont(ofSize: 12)
-        //색깔 조금씩 더 연하게
-        //cell.backgroundColor?.withAlphaComponent(<#T##CGFloat#>)
-        return cell
-    }
-    
-    // 4. 헤더 입력
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return sectionName[section]
-        } else if section == 1 {
-            return sectionName[section]
-        } else {
-            return "기타"
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        configureDataSource()
+        updateSnapShot()
+        
     }
 
-    // 5. 셀 높이
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-        // viewDidLoad에서 tableview.rowHeight = 80 으로도 설정가능
-    }
     
+    func updateSnapShot() {
+        var snapShot = NSDiffableDataSourceSnapshot<String,String>()
         
+        snapShot.appendSections(sectionName)
+        snapShot.appendItems(settingMenu[0], toSection: sectionName[0])
+        snapShot.appendItems(settingMenu[1], toSection: sectionName[1])
+        snapShot.appendItems(settingMenu[2], toSection: sectionName[2])
+        
+        dataSource.apply(snapShot) // reloadData
+    }
 
 }
+
